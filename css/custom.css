@@ -548,3 +548,112 @@ div[id],
     min-width: 0;
   }
 }
+
+/* =========================================================
+   TODAY HOURS
+   动态今日营业时间
+   ---------------------------------------------------------
+   作用 / Purpose:
+   1) 高亮显示今天营业状态
+   2) 下方保留完整营业时间列表
+   ========================================================= */
+.ev-today-hours {
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #eef5ff;
+  color: #005ecb;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.ev-hours-list {
+  display: grid;
+  gap: 4px;
+}
+
+.ev-hours-list span {
+  color: #1d1d1f;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   NAV TITLE CLICK FIX
+   顶部标题可点击修复
+   ---------------------------------------------------------
+   作用 / Purpose:
+   1) 确保网站标题链接在最上层
+   2) 防止被导航遮罩或别的元素挡住
+   ========================================================= */
+#theme-nav .title,
+#theme-nav .title a {
+  position: relative;
+  z-index: 1002;
+  pointer-events: auto;
+}
+
+/* =========================================================
+   MOBILE NAV FIX
+   手机端导航修复
+   ---------------------------------------------------------
+   作用 / Purpose:
+   1) 手机上导航改成横向可滑动
+   2) 菜单不再挤压标题
+   3) 下拉菜单在手机端先关闭 hover 行为
+   ========================================================= */
+@media (max-width: 768px) {
+  #theme-nav .inner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  #theme-nav .title {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  .ev-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 18px;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .ev-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ev-nav-item {
+    flex: 0 0 auto;
+  }
+
+  .ev-nav-link {
+    white-space: nowrap;
+    font-size: 16px;
+    padding: 8px 0;
+  }
+
+  /* 手机端先禁用 hover 下拉，避免菜单乱飞 */
+  .ev-has-dropdown:hover .ev-dropdown {
+    display: none;
+  }
+
+  .ev-has-dropdown::before {
+    display: none;
+  }
+
+  .ev-dropdown {
+    display: none !important;
+  }
+}

@@ -1,0 +1,142 @@
+.ev-nav {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.ev-nav-item {
+  position: relative;
+}
+
+.ev-nav-link {
+  text-decoration: none;
+  color: inherit;
+  padding: 6px 0;
+  display: inline-block;
+}
+
+.ev-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border-radius: 14px;
+  padding: 10px 0;
+  min-width: 200px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  display: none;
+  list-style: none;
+  margin: 8px 0 0;
+  z-index: 999;
+}
+
+.ev-dropdown li a {
+  display: block;
+  padding: 10px 16px;
+  color: #111;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.ev-dropdown li a:hover {
+  background: #f5f5f7;
+}
+
+.ev-has-dropdown:hover .ev-dropdown {
+  display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#theme-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(245, 245, 247, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+#theme-nav .inner {
+  position: relative;
+  z-index: 1001;
+}
+
+.ev-nav {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.ev-nav-item {
+  position: relative;
+}
+
+.ev-nav-link {
+  text-decoration: none;
+  color: inherit;
+  padding: 6px 0;
+  display: inline-block;
+}
+
+.ev-has-dropdown::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 998;
+}
+
+.ev-has-dropdown:hover::before {
+  opacity: 1;
+}
+
+.ev-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: white;
+  border-radius: 14px;
+  padding: 10px 0;
+  min-width: 200px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  display: none;
+  list-style: none;
+  margin: 0;
+  z-index: 999;
+}
+
+.ev-dropdown li a {
+  display: block;
+  padding: 10px 16px;
+  color: #111;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.ev-dropdown li a:hover {
+  background: #f5f5f7;
+}
+
+.ev-has-dropdown:hover .ev-dropdown {
+  display: block;
+}
+
+h2[id],
+h3[id],
+section[id],
+div[id] {
+  scroll-margin-top: 120px;
+}

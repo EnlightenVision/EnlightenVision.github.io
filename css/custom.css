@@ -23,7 +23,7 @@ body {
   padding-top: 76px;
   background:
     radial-gradient(circle at top left, rgba(219, 234, 254, 0.45), transparent 38%),
-    radial-gradient(circle at top right, rgba(224, 242, 254, 0.4), transparent 32%),
+    radial-gradient(circle at top right, rgba(224, 242, 254, 0.40), transparent 32%),
     linear-gradient(180deg, #f8fbff 0%, #f5f7fb 100%);
 }
 
@@ -34,6 +34,21 @@ body {
       radial-gradient(circle at top right, rgba(14, 116, 144, 0.16), transparent 35%),
       linear-gradient(180deg, #111827 0%, #0f172a 100%);
   }
+}
+
+/* 兼容主题手动切换 dark 模式 */
+html.dark body,
+body.dark,
+html[data-theme="dark"] body,
+body[data-theme="dark"],
+html[data-color-scheme="dark"] body,
+body[data-color-scheme="dark"],
+html[color-scheme="dark"] body,
+body[color-scheme="dark"] {
+  background:
+    radial-gradient(circle at top left, rgba(30, 64, 175, 0.18), transparent 40%),
+    radial-gradient(circle at top right, rgba(14, 116, 144, 0.16), transparent 35%),
+    linear-gradient(180deg, #111827 0%, #0f172a 100%);
 }
 
 /* =========================================================
@@ -69,6 +84,18 @@ body {
   }
 }
 
+html.dark #theme-nav,
+body.dark #theme-nav,
+html[data-theme="dark"] #theme-nav,
+body[data-theme="dark"] #theme-nav,
+html[data-color-scheme="dark"] #theme-nav,
+body[data-color-scheme="dark"] #theme-nav,
+html[color-scheme="dark"] #theme-nav,
+body[color-scheme="dark"] #theme-nav {
+  background: rgba(17, 24, 39, 0.82);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+}
+
 /* =========================================================
    NAV TITLE CLICK FIX
    顶部标题可点击修复
@@ -87,10 +114,6 @@ body {
 /* =========================================================
    NAV LIST LAYOUT
    导航列表布局
-   ---------------------------------------------------------
-   作用 / Purpose:
-   1) 横向排列菜单
-   2) 控制菜单之间间距
    ========================================================= */
 .ev-nav {
   display: flex;
@@ -115,9 +138,6 @@ body {
 /* =========================================================
    NAV DROPDOWN MASK
    下拉菜单背景遮罩
-   ---------------------------------------------------------
-   作用 / Purpose:
-   1) hover 下拉菜单时提供轻微聚焦效果
    ========================================================= */
 .ev-has-dropdown::before {
   content: "";
@@ -137,10 +157,6 @@ body {
 /* =========================================================
    NAV DROPDOWN PANEL
    下拉菜单面板
-   ---------------------------------------------------------
-   作用 / Purpose:
-   1) 控制下拉菜单位置、阴影、圆角
-   2) 默认隐藏，hover 时显示
    ========================================================= */
 .ev-dropdown {
   position: absolute;
@@ -188,14 +204,43 @@ body {
   }
 }
 
+html.dark .ev-dropdown,
+body.dark .ev-dropdown,
+html[data-theme="dark"] .ev-dropdown,
+body[data-theme="dark"] .ev-dropdown,
+html[data-color-scheme="dark"] .ev-dropdown,
+body[data-color-scheme="dark"] .ev-dropdown,
+html[color-scheme="dark"] .ev-dropdown,
+body[color-scheme="dark"] .ev-dropdown {
+  background: #111827;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+}
+
+html.dark .ev-dropdown li a,
+body.dark .ev-dropdown li a,
+html[data-theme="dark"] .ev-dropdown li a,
+body[data-theme="dark"] .ev-dropdown li a,
+html[data-color-scheme="dark"] .ev-dropdown li a,
+body[data-color-scheme="dark"] .ev-dropdown li a,
+html[color-scheme="dark"] .ev-dropdown li a,
+body[color-scheme="dark"] .ev-dropdown li a {
+  color: #f3f4f6;
+}
+
+html.dark .ev-dropdown li a:hover,
+body.dark .ev-dropdown li a:hover,
+html[data-theme="dark"] .ev-dropdown li a:hover,
+body[data-theme="dark"] .ev-dropdown li a:hover,
+html[data-color-scheme="dark"] .ev-dropdown li a:hover,
+body[data-color-scheme="dark"] .ev-dropdown li a:hover,
+html[color-scheme="dark"] .ev-dropdown li a:hover,
+body[color-scheme="dark"] .ev-dropdown li a:hover {
+  background: #1f2937;
+}
+
 /* =========================================================
    HAMBURGER NAV: DESKTOP + MOBILE
    手机汉堡菜单 / 桌面导航
-   ---------------------------------------------------------
-   作用 / Purpose:
-   1) 桌面端显示正常导航
-   2) 手机端显示汉堡按钮
-   3) 点击汉堡展开全宽菜单
    ========================================================= */
 .desktop-nav {
   display: flex;
@@ -322,6 +367,64 @@ body {
   }
 }
 
+html.dark .mobile-nav-toggle span,
+body.dark .mobile-nav-toggle span,
+html[data-theme="dark"] .mobile-nav-toggle span,
+body[data-theme="dark"] .mobile-nav-toggle span,
+html[data-color-scheme="dark"] .mobile-nav-toggle span,
+body[data-color-scheme="dark"] .mobile-nav-toggle span,
+html[color-scheme="dark"] .mobile-nav-toggle span,
+body[color-scheme="dark"] .mobile-nav-toggle span {
+  background: #f3f4f6;
+}
+
+html.dark .mobile-nav-panel,
+body.dark .mobile-nav-panel,
+html[data-theme="dark"] .mobile-nav-panel,
+body[data-theme="dark"] .mobile-nav-panel,
+html[data-color-scheme="dark"] .mobile-nav-panel,
+body[data-color-scheme="dark"] .mobile-nav-panel,
+html[color-scheme="dark"] .mobile-nav-panel,
+body[color-scheme="dark"] .mobile-nav-panel {
+  background: rgba(17, 24, 39, 0.94);
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+html.dark .mobile-nav-home,
+html.dark .mobile-nav-link,
+html.dark .mobile-nav-parent-link,
+body.dark .mobile-nav-home,
+body.dark .mobile-nav-link,
+body.dark .mobile-nav-parent-link,
+html[data-theme="dark"] .mobile-nav-home,
+html[data-theme="dark"] .mobile-nav-link,
+html[data-theme="dark"] .mobile-nav-parent-link,
+html[data-color-scheme="dark"] .mobile-nav-home,
+html[data-color-scheme="dark"] .mobile-nav-link,
+html[data-color-scheme="dark"] .mobile-nav-parent-link,
+html[color-scheme="dark"] .mobile-nav-home,
+html[color-scheme="dark"] .mobile-nav-link,
+html[color-scheme="dark"] .mobile-nav-parent-link {
+  color: #f3f4f6;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+html.dark .mobile-nav-group,
+body.dark .mobile-nav-group,
+html[data-theme="dark"] .mobile-nav-group,
+html[data-color-scheme="dark"] .mobile-nav-group,
+html[color-scheme="dark"] .mobile-nav-group {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+html.dark .mobile-nav-submenu a,
+body.dark .mobile-nav-submenu a,
+html[data-theme="dark"] .mobile-nav-submenu a,
+html[data-color-scheme="dark"] .mobile-nav-submenu a,
+html[color-scheme="dark"] .mobile-nav-submenu a {
+  color: #cbd5e1;
+}
+
 @media (min-width: 769px) {
   .desktop-nav {
     display: flex;
@@ -372,9 +475,6 @@ body {
 /* =========================================================
    ANCHOR OFFSET
    锚点偏移
-   ---------------------------------------------------------
-   作用 / Purpose:
-   1) 点击锚点时，不会被 fixed 顶栏挡住
    ========================================================= */
 h2[id],
 h3[id],
@@ -383,6 +483,34 @@ div[id],
 #contact-form,
 #appointment {
   scroll-margin-top: 140px;
+}
+
+/* =========================================================
+   TOP SPACING RESET
+   顶部留白修正
+   ========================================================= */
+body > *:first-child {
+  margin-top: 0 !important;
+}
+
+main,
+.main,
+.container,
+.content,
+.page,
+.post {
+  margin-top: 0;
+}
+
+/* =========================================================
+   HERO AREA TONE
+   首页 Hero 区域保持干净背景
+   ========================================================= */
+.hero,
+.hero .inner,
+.index-hero,
+section.hero {
+  background: transparent;
 }
 
 /* =========================================================
@@ -399,10 +527,6 @@ div[id],
   align-items: start;
 }
 
-/* =========================================================
-   CONTACT PAGE: LEFT SIDEBAR
-   Contact 页面：左侧联系信息栏
-   ========================================================= */
 .ev-contact-sidebar {
   position: sticky;
   top: 110px;
@@ -410,10 +534,6 @@ div[id],
   z-index: 1;
 }
 
-/* =========================================================
-   CONTACT PAGE: RIGHT FORM AREA
-   Contact 页面：右侧表单区域
-   ========================================================= */
 .ev-contact-main {
   min-width: 0;
   display: grid;
@@ -425,10 +545,6 @@ div[id],
 /* =========================================================
    CONTACT PAGE: CARD BASE STYLE
    Contact 页面：信息卡片和表单卡片
-   ---------------------------------------------------------
-   作用 / Purpose:
-   1) 白天浅色卡片
-   2) 夜间深灰蓝卡片
    ========================================================= */
 .ev-contact-panel,
 .ev-form-card {
@@ -448,6 +564,35 @@ div[id],
     border: 1px solid rgba(148, 163, 184, 0.1);
     box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
   }
+}
+
+html.dark .ev-contact-panel,
+html.dark .ev-form-card,
+html.dark .card,
+html.dark .post-list .item,
+body.dark .ev-contact-panel,
+body.dark .ev-form-card,
+body.dark .card,
+body.dark .post-list .item,
+html[data-theme="dark"] .ev-contact-panel,
+html[data-theme="dark"] .ev-form-card,
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .post-list .item,
+body[data-theme="dark"] .ev-contact-panel,
+body[data-theme="dark"] .ev-form-card,
+body[data-theme="dark"] .card,
+body[data-theme="dark"] .post-list .item,
+html[data-color-scheme="dark"] .ev-contact-panel,
+html[data-color-scheme="dark"] .ev-form-card,
+html[data-color-scheme="dark"] .card,
+html[data-color-scheme="dark"] .post-list .item,
+html[color-scheme="dark"] .ev-contact-panel,
+html[color-scheme="dark"] .ev-form-card,
+html[color-scheme="dark"] .card,
+html[color-scheme="dark"] .post-list .item {
+  background: #111827;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
 }
 
 /* =========================================================
@@ -483,6 +628,29 @@ div[id],
   .ev-form-intro {
     color: #94a3b8;
   }
+}
+
+html.dark .ev-contact-kicker,
+html.dark .ev-contact-lead,
+html.dark .ev-contact-section-label,
+html.dark .ev-form-intro,
+body.dark .ev-contact-kicker,
+body.dark .ev-contact-lead,
+body.dark .ev-contact-section-label,
+body.dark .ev-form-intro,
+html[data-theme="dark"] .ev-contact-kicker,
+html[data-theme="dark"] .ev-contact-lead,
+html[data-theme="dark"] .ev-contact-section-label,
+html[data-theme="dark"] .ev-form-intro,
+html[data-color-scheme="dark"] .ev-contact-kicker,
+html[data-color-scheme="dark"] .ev-contact-lead,
+html[data-color-scheme="dark"] .ev-contact-section-label,
+html[data-color-scheme="dark"] .ev-form-intro,
+html[color-scheme="dark"] .ev-contact-kicker,
+html[color-scheme="dark"] .ev-contact-lead,
+html[color-scheme="dark"] .ev-contact-section-label,
+html[color-scheme="dark"] .ev-form-intro {
+  color: #94a3b8;
 }
 
 /* =========================================================
@@ -521,27 +689,80 @@ div[id],
   text-decoration: underline;
 }
 
-.ev-contact-info-card span {
+.ev-contact-info-card span,
+.ev-contact-info-card p {
   color: #1d1d1f;
 }
 
 @media (prefers-color-scheme: dark) {
   .ev-contact-info-card {
-    background: #0f172a;
+    background: #111827;
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    box-shadow: none;
   }
 
   .ev-contact-info-card strong {
     color: #94a3b8;
   }
 
-  .ev-contact-info-card span {
+  .ev-contact-info-card span,
+  .ev-contact-info-card p {
     color: #e5e7eb;
   }
+
+  .ev-contact-info-card a {
+    color: #60a5fa;
+  }
+}
+
+html.dark .ev-contact-info-card,
+body.dark .ev-contact-info-card,
+html[data-theme="dark"] .ev-contact-info-card,
+body[data-theme="dark"] .ev-contact-info-card,
+html[data-color-scheme="dark"] .ev-contact-info-card,
+body[data-color-scheme="dark"] .ev-contact-info-card,
+html[color-scheme="dark"] .ev-contact-info-card,
+body[color-scheme="dark"] .ev-contact-info-card {
+  background: #111827;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  box-shadow: none;
+}
+
+html.dark .ev-contact-info-card strong,
+body.dark .ev-contact-info-card strong,
+html[data-theme="dark"] .ev-contact-info-card strong,
+body[data-theme="dark"] .ev-contact-info-card strong,
+html[data-color-scheme="dark"] .ev-contact-info-card strong,
+body[data-color-scheme="dark"] .ev-contact-info-card strong,
+html[color-scheme="dark"] .ev-contact-info-card strong,
+body[color-scheme="dark"] .ev-contact-info-card strong {
+  color: #94a3b8;
+}
+
+html.dark .ev-contact-info-card span,
+html.dark .ev-contact-info-card p,
+body.dark .ev-contact-info-card span,
+body.dark .ev-contact-info-card p,
+html[data-theme="dark"] .ev-contact-info-card span,
+html[data-theme="dark"] .ev-contact-info-card p,
+html[data-color-scheme="dark"] .ev-contact-info-card span,
+html[data-color-scheme="dark"] .ev-contact-info-card p,
+html[color-scheme="dark"] .ev-contact-info-card span,
+html[color-scheme="dark"] .ev-contact-info-card p {
+  color: #e5e7eb;
+}
+
+html.dark .ev-contact-info-card a,
+body.dark .ev-contact-info-card a,
+html[data-theme="dark"] .ev-contact-info-card a,
+html[data-color-scheme="dark"] .ev-contact-info-card a,
+html[color-scheme="dark"] .ev-contact-info-card a {
+  color: #60a5fa;
 }
 
 /* =========================================================
    CONTACT PAGE: LEFT PANEL ACTION BUTTONS
-   Contact 页面：左侧按钮（Contact Form / Book Appointment）
+   Contact 页面：左侧按钮
    ========================================================= */
 .ev-contact-actions {
   display: flex;
@@ -599,665 +820,27 @@ div[id],
    输入框和文本框样式
    ========================================================= */
 .ev-form input,
-.ev-form textarea {
+.ev-form textarea,
+.ev-form select {
   width: 100%;
   padding: 14px 16px;
   border: 1px solid #d2d2d7;
   border-radius: 16px;
   font-size: 16px;
   background: #fff;
+  color: #1d1d1f;
   box-sizing: border-box;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .ev-form input:focus,
-.ev-form textarea:focus {
+.ev-form textarea:focus,
+.ev-form select:focus {
   outline: none;
   border-color: #0071e3;
   box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.12);
 }
 
-@media (prefers-color-scheme: dark) {
-  .ev-form input,
-  .ev-form textarea {
-    background: #0f172a;
-    border-color: rgba(148, 163, 184, 0.18);
-    color: #f3f4f6;
-  }
-
-  .ev-form input:focus,
-  .ev-form textarea:focus {
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
-  }
-}
-
-/* =========================================================
-   SHARED BUTTON STYLE
-   通用按钮样式
-   ========================================================= */
-.ev-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: -moz-fit-content;
-  width: fit-content;
-  min-width: 150px;
-  padding: 12px 20px;
-  border-radius: 999px;
-  border: none;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
-}
-
-.ev-btn:hover {
-  transform: translateY(-1px);
-}
-
-.ev-btn-primary {
-  background: #0071e3;
-  color: #fff;
-}
-
-.ev-btn-primary:hover {
-  background: #005ecb;
-}
-
-.ev-btn-secondary {
-  background: #eef5ff;
-  color: #0071e3;
-}
-
-.ev-btn-secondary:hover {
-  background: #ddeaff;
-}
-
-@media (prefers-color-scheme: dark) {
-  .ev-btn-secondary {
-    background: #1e3a8a;
-    color: #dbeafe;
-  }
-
-  .ev-btn-secondary:hover {
-    background: #1d4ed8;
-  }
-}
-
-/* =========================================================
-   STICKY CONTACT BAR
-   右下角悬浮操作栏
-   ========================================================= */
-.ev-sticky-contact-bar {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  z-index: 1200;
-  display: flex;
-  gap: 12px;
-  padding: 12px;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-radius: 999px;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
-}
-
-.ev-sticky-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 150px;
-  padding: 12px 18px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 700;
-}
-
-.ev-sticky-call {
-  background: #111827;
-  color: #fff;
-}
-
-.ev-sticky-book {
-  background: #0071e3;
-  color: #fff;
-}
-
-@media (prefers-color-scheme: dark) {
-  .ev-sticky-contact-bar {
-    background: rgba(17, 24, 39, 0.86);
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
-  }
-}
-
-/* =========================================================
-   TODAY HOURS
-   动态今日营业时间
-   ========================================================= */
-.ev-today-hours {
-  margin-bottom: 10px;
-  padding: 10px 12px;
-  border-radius: 12px;
-  background: #eef5ff;
-  color: #005ecb;
-  font-weight: 700;
-  line-height: 1.5;
-}
-
-.ev-hours-list {
-  display: grid;
-  gap: 4px;
-}
-
-.ev-hours-list span {
-  color: #1d1d1f;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-@media (prefers-color-scheme: dark) {
-  .ev-today-hours {
-    background: rgba(30, 64, 175, 0.2);
-    color: #bfdbfe;
-  }
-
-  .ev-hours-list span {
-    color: #e5e7eb;
-  }
-}
-
-/* =========================================================
-   TOP SPACING RESET
-   顶部留白修正
-   ========================================================= */
-body > *:first-child {
-  margin-top: 0 !important;
-}
-
-main,
-.main,
-.container,
-.content,
-.page,
-.post {
-  margin-top: 0;
-}
-
-/* =========================================================
-   HERO AREA TONE
-   首页 Hero 区域轻微提亮
-   ========================================================= */
-.hero,
-.hero .inner,
-.index-hero,
-section.hero {
-  background: transparent;
-}
-
-/* =========================================================
-   RESPONSIVE: TABLET AND BELOW
-   平板及以下适配
-   ========================================================= */
-@media (max-width: 980px) {
-  .ev-contact-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .ev-contact-sidebar {
-    position: static;
-  }
-}
-
-/* =========================================================
-   RESPONSIVE: MOBILE
-   手机端适配
-   ========================================================= */
-@media (max-width: 768px) {
-  .ev-contact-layout {
-    padding: 16px 16px 110px;
-  }
-
-  .ev-contact-panel,
-  .ev-form-card {
-    padding: 24px 20px;
-    border-radius: 22px;
-  }
-
-  .ev-contact-panel h1 {
-    font-size: 38px;
-  }
-
-  .ev-form-card h2 {
-    font-size: 30px;
-  }
-
-  .ev-sticky-contact-bar {
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
-    justify-content: stretch;
-  }
-
-  .ev-sticky-btn {
-    flex: 1;
-    min-width: 0;
-  }
-}
-
-/* =========================================================
-   FORCED DARK MODE SUPPORT
-   主题切换暗色模式兼容
-   ---------------------------------------------------------
-   作用 / Purpose:
-   1) 兼容 prefers-color-scheme: dark
-   2) 兼容主题自己加在 html/body 上的 dark 标记
-   ========================================================= */
-
-/* 全站背景：深灰蓝，不用纯黑 */
-@media (prefers-color-scheme: dark) {
-  body {
-    background:
-      radial-gradient(circle at top left, rgba(30, 64, 175, 0.18), transparent 40%),
-      radial-gradient(circle at top right, rgba(14, 116, 144, 0.16), transparent 35%),
-      linear-gradient(180deg, #111827 0%, #0f172a 100%);
-  }
-}
-
-html.dark body,
-body.dark,
-html[data-theme="dark"] body,
-body[data-theme="dark"],
-html[data-color-scheme="dark"] body,
-body[data-color-scheme="dark"],
-html[color-scheme="dark"] body,
-body[color-scheme="dark"] {
-  background:
-    radial-gradient(circle at top left, rgba(30, 64, 175, 0.18), transparent 40%),
-    radial-gradient(circle at top right, rgba(14, 116, 144, 0.16), transparent 35%),
-    linear-gradient(180deg, #111827 0%, #0f172a 100%);
-}
-
-/* 顶栏 */
-@media (prefers-color-scheme: dark) {
-  #theme-nav {
-    background: rgba(17, 24, 39, 0.82);
-    border-bottom: 1px solid rgba(148, 163, 184, 0.14);
-  }
-}
-
-html.dark #theme-nav,
-body.dark #theme-nav,
-html[data-theme="dark"] #theme-nav,
-body[data-theme="dark"] #theme-nav,
-html[data-color-scheme="dark"] #theme-nav,
-body[data-color-scheme="dark"] #theme-nav,
-html[color-scheme="dark"] #theme-nav,
-body[color-scheme="dark"] #theme-nav {
-  background: rgba(17, 24, 39, 0.82);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
-}
-
-/* 卡片 */
-@media (prefers-color-scheme: dark) {
-  .ev-contact-panel,
-  .ev-form-card,
-  .card,
-  .post-list .item {
-    background: #111827;
-    border: 1px solid rgba(148, 163, 184, 0.1);
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
-  }
-}
-
-html.dark .ev-contact-panel,
-html.dark .ev-form-card,
-html.dark .card,
-html.dark .post-list .item,
-body.dark .ev-contact-panel,
-body.dark .ev-form-card,
-body.dark .card,
-body.dark .post-list .item,
-html[data-theme="dark"] .ev-contact-panel,
-html[data-theme="dark"] .ev-form-card,
-html[data-theme="dark"] .card,
-html[data-theme="dark"] .post-list .item,
-body[data-theme="dark"] .ev-contact-panel,
-body[data-theme="dark"] .ev-form-card,
-body[data-theme="dark"] .card,
-body[data-theme="dark"] .post-list .item,
-html[data-color-scheme="dark"] .ev-contact-panel,
-html[data-color-scheme="dark"] .ev-form-card,
-html[data-color-scheme="dark"] .card,
-html[data-color-scheme="dark"] .post-list .item,
-html[color-scheme="dark"] .ev-contact-panel,
-html[color-scheme="dark"] .ev-form-card,
-html[color-scheme="dark"] .card,
-html[color-scheme="dark"] .post-list .item {
-  background: #111827;
-  border: 1px solid rgba(148, 163, 184, 0.1);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
-}
-
-/* 输入框 */
-@media (prefers-color-scheme: dark) {
-  .ev-form input,
-  .ev-form textarea {
-    background: #0f172a;
-    border-color: rgba(148, 163, 184, 0.18);
-    color: #f3f4f6;
-  }
-}
-
-html.dark .ev-form input,
-html.dark .ev-form textarea,
-body.dark .ev-form input,
-body.dark .ev-form textarea,
-html[data-theme="dark"] .ev-form input,
-html[data-theme="dark"] .ev-form textarea,
-body[data-theme="dark"] .ev-form input,
-body[data-theme="dark"] .ev-form textarea,
-html[data-color-scheme="dark"] .ev-form input,
-html[data-color-scheme="dark"] .ev-form textarea,
-html[color-scheme="dark"] .ev-form input,
-html[color-scheme="dark"] .ev-form textarea {
-  background: #0f172a;
-  border-color: rgba(148, 163, 184, 0.18);
-  color: #f3f4f6;
-}
-
-/* 文字 */
-@media (prefers-color-scheme: dark) {
-  .ev-contact-kicker,
-  .ev-contact-lead,
-  .ev-contact-section-label,
-  .ev-form-intro {
-    color: #94a3b8;
-  }
-
-  .ev-hours-list span,
-  .ev-contact-info-card span {
-    color: #e5e7eb;
-  }
-
-  .ev-contact-info-card {
-    background: #0f172a;
-  }
-
-  .ev-contact-info-card strong {
-    color: #94a3b8;
-  }
-}
-
-html.dark .ev-contact-kicker,
-html.dark .ev-contact-lead,
-html.dark .ev-contact-section-label,
-html.dark .ev-form-intro,
-body.dark .ev-contact-kicker,
-body.dark .ev-contact-lead,
-body.dark .ev-contact-section-label,
-body.dark .ev-form-intro,
-html[data-theme="dark"] .ev-contact-kicker,
-html[data-theme="dark"] .ev-contact-lead,
-html[data-theme="dark"] .ev-contact-section-label,
-html[data-theme="dark"] .ev-form-intro,
-html[data-color-scheme="dark"] .ev-contact-kicker,
-html[data-color-scheme="dark"] .ev-contact-lead,
-html[data-color-scheme="dark"] .ev-contact-section-label,
-html[data-color-scheme="dark"] .ev-form-intro,
-html[color-scheme="dark"] .ev-contact-kicker,
-html[color-scheme="dark"] .ev-contact-lead,
-html[color-scheme="dark"] .ev-contact-section-label,
-html[color-scheme="dark"] .ev-form-intro {
-  color: #94a3b8;
-}
-
-html.dark .ev-contact-info-card,
-body.dark .ev-contact-info-card,
-html[data-theme="dark"] .ev-contact-info-card,
-body[data-theme="dark"] .ev-contact-info-card,
-html[data-color-scheme="dark"] .ev-contact-info-card,
-html[color-scheme="dark"] .ev-contact-info-card {
-  background: #0f172a;
-}
-
-html.dark .ev-contact-info-card strong,
-body.dark .ev-contact-info-card strong,
-html[data-theme="dark"] .ev-contact-info-card strong,
-body[data-theme="dark"] .ev-contact-info-card strong,
-html[data-color-scheme="dark"] .ev-contact-info-card strong,
-html[color-scheme="dark"] .ev-contact-info-card strong {
-  color: #94a3b8;
-}
-
-html.dark .ev-hours-list span,
-html.dark .ev-contact-info-card span,
-body.dark .ev-hours-list span,
-body.dark .ev-contact-info-card span,
-html[data-theme="dark"] .ev-hours-list span,
-html[data-theme="dark"] .ev-contact-info-card span,
-html[data-color-scheme="dark"] .ev-hours-list span,
-html[data-color-scheme="dark"] .ev-contact-info-card span,
-html[color-scheme="dark"] .ev-hours-list span,
-html[color-scheme="dark"] .ev-contact-info-card span {
-  color: #e5e7eb;
-}
-
-/* =========================================================
-   CONTACT PAGE DARK MODE OVERRIDE
-   Contact 页面暗色模式强制覆盖
-   ---------------------------------------------------------
-   作用 / Purpose:
-   1) 强制把 Contact 页面卡片改成深灰蓝
-   2) 强制修正标题、正文、标签、输入框文字颜色
-   3) 避免白卡片在暗色模式下刺眼
-   ========================================================= */
-
-@media (prefers-color-scheme: dark) {
-  .ev-contact-panel,
-  .ev-form-card {
-    background: #111827 !important;
-    border: 1px solid rgba(148, 163, 184, 0.12) !important;
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45) !important;
-  }
-
-  .ev-contact-panel h1,
-  .ev-form-card h2,
-  .ev-form label,
-  .ev-contact-panel,
-  .ev-form-card,
-  .ev-contact-info-card,
-  .ev-contact-info-card span,
-  .ev-hours-list span {
-    color: #e5e7eb !important;
-  }
-
-  .ev-contact-kicker,
-  .ev-contact-lead,
-  .ev-contact-section-label,
-  .ev-form-intro,
-  .ev-contact-info-card strong {
-    color: #94a3b8 !important;
-  }
-
-  .ev-contact-info-card {
-    background: #0f172a !important;
-  }
-
-  .ev-contact-info-card a {
-    color: #60a5fa !important;
-  }
-
-  .ev-form input,
-  .ev-form textarea {
-    background: #0f172a !important;
-    color: #f9fafb !important;
-    border: 1px solid rgba(148, 163, 184, 0.18) !important;
-  }
-
-  .ev-form input::-moz-placeholder, .ev-form textarea::-moz-placeholder {
-    color: #94a3b8 !important;
-  }
-
-  .ev-form input::placeholder,
-  .ev-form textarea::placeholder {
-    color: #94a3b8 !important;
-  }
-
-  .ev-form input:focus,
-  .ev-form textarea:focus {
-    border-color: #3b82f6 !important;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18) !important;
-  }
-
-  .ev-today-hours {
-    background: rgba(30, 64, 175, 0.2) !important;
-    color: #bfdbfe !important;
-  }
-
-  .ev-sticky-contact-bar {
-    background: rgba(17, 24, 39, 0.86) !important;
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45) !important;
-  }
-}
-
-/* 兼容主题手动切换 dark 模式的属性/类 */
-html.dark .ev-contact-panel,
-body.dark .ev-contact-panel,
-html[data-theme="dark"] .ev-contact-panel,
-body[data-theme="dark"] .ev-contact-panel,
-html[data-color-scheme="dark"] .ev-contact-panel,
-body[data-color-scheme="dark"] .ev-contact-panel,
-html[color-scheme="dark"] .ev-contact-panel,
-body[color-scheme="dark"] .ev-contact-panel,
-html.dark .ev-form-card,
-body.dark .ev-form-card,
-html[data-theme="dark"] .ev-form-card,
-body[data-theme="dark"] .ev-form-card,
-html[data-color-scheme="dark"] .ev-form-card,
-body[data-color-scheme="dark"] .ev-form-card,
-html[color-scheme="dark"] .ev-form-card,
-body[color-scheme="dark"] .ev-form-card {
-  background: #111827 !important;
-  border: 1px solid rgba(148, 163, 184, 0.12) !important;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45) !important;
-}
-
-html.dark .ev-contact-panel h1,
-html.dark .ev-form-card h2,
-html.dark .ev-form label,
-html.dark .ev-contact-panel,
-html.dark .ev-form-card,
-html.dark .ev-contact-info-card,
-html.dark .ev-contact-info-card span,
-html.dark .ev-hours-list span,
-body.dark .ev-contact-panel h1,
-body.dark .ev-form-card h2,
-body.dark .ev-form label,
-body.dark .ev-contact-panel,
-body.dark .ev-form-card,
-body.dark .ev-contact-info-card,
-body.dark .ev-contact-info-card span,
-body.dark .ev-hours-list span,
-html[data-theme="dark"] .ev-contact-panel h1,
-html[data-theme="dark"] .ev-form-card h2,
-html[data-theme="dark"] .ev-form label,
-html[data-theme="dark"] .ev-contact-panel,
-html[data-theme="dark"] .ev-form-card,
-html[data-theme="dark"] .ev-contact-info-card,
-html[data-theme="dark"] .ev-contact-info-card span,
-html[data-theme="dark"] .ev-hours-list span,
-html[data-color-scheme="dark"] .ev-contact-panel h1,
-html[data-color-scheme="dark"] .ev-form-card h2,
-html[data-color-scheme="dark"] .ev-form label,
-html[data-color-scheme="dark"] .ev-contact-panel,
-html[data-color-scheme="dark"] .ev-form-card,
-html[data-color-scheme="dark"] .ev-contact-info-card,
-html[data-color-scheme="dark"] .ev-contact-info-card span,
-html[data-color-scheme="dark"] .ev-hours-list span,
-html[color-scheme="dark"] .ev-contact-panel h1,
-html[color-scheme="dark"] .ev-form-card h2,
-html[color-scheme="dark"] .ev-form label,
-html[color-scheme="dark"] .ev-contact-panel,
-html[color-scheme="dark"] .ev-form-card,
-html[color-scheme="dark"] .ev-contact-info-card,
-html[color-scheme="dark"] .ev-contact-info-card span,
-html[color-scheme="dark"] .ev-hours-list span {
-  color: #e5e7eb !important;
-}
-
-html.dark .ev-contact-kicker,
-html.dark .ev-contact-lead,
-html.dark .ev-contact-section-label,
-html.dark .ev-form-intro,
-html.dark .ev-contact-info-card strong,
-body.dark .ev-contact-kicker,
-body.dark .ev-contact-lead,
-body.dark .ev-contact-section-label,
-body.dark .ev-form-intro,
-body.dark .ev-contact-info-card strong,
-html[data-theme="dark"] .ev-contact-kicker,
-html[data-theme="dark"] .ev-contact-lead,
-html[data-theme="dark"] .ev-contact-section-label,
-html[data-theme="dark"] .ev-form-intro,
-html[data-theme="dark"] .ev-contact-info-card strong,
-html[data-color-scheme="dark"] .ev-contact-kicker,
-html[data-color-scheme="dark"] .ev-contact-lead,
-html[data-color-scheme="dark"] .ev-contact-section-label,
-html[data-color-scheme="dark"] .ev-form-intro,
-html[data-color-scheme="dark"] .ev-contact-info-card strong,
-html[color-scheme="dark"] .ev-contact-kicker,
-html[color-scheme="dark"] .ev-contact-lead,
-html[color-scheme="dark"] .ev-contact-section-label,
-html[color-scheme="dark"] .ev-form-intro,
-html[color-scheme="dark"] .ev-contact-info-card strong {
-  color: #94a3b8 !important;
-}
-
-html.dark .ev-contact-info-card,
-body.dark .ev-contact-info-card,
-html[data-theme="dark"] .ev-contact-info-card,
-html[data-color-scheme="dark"] .ev-contact-info-card,
-html[color-scheme="dark"] .ev-contact-info-card {
-  background: #0f172a !important;
-}
-
-html.dark .ev-contact-info-card a,
-body.dark .ev-contact-info-card a,
-html[data-theme="dark"] .ev-contact-info-card a,
-html[data-color-scheme="dark"] .ev-contact-info-card a,
-html[color-scheme="dark"] .ev-contact-info-card a {
-  color: #60a5fa !important;
-}
-
-html.dark .ev-form input,
-html.dark .ev-form textarea,
-body.dark .ev-form input,
-body.dark .ev-form textarea,
-html[data-theme="dark"] .ev-form input,
-html[data-theme="dark"] .ev-form textarea,
-html[data-color-scheme="dark"] .ev-form input,
-html[data-color-scheme="dark"] .ev-form textarea,
-html[color-scheme="dark"] .ev-form input,
-html[color-scheme="dark"] .ev-form textarea {
-  background: #0f172a !important;
-  color: #f9fafb !important;
-  border: 1px solid rgba(148, 163, 184, 0.18) !important;
-}
-
-/* =========================================================
-   DARK MODE INPUT OVERRIDE
-   暗色模式输入框强制覆盖
-   ---------------------------------------------------------
-   作用 / Purpose:
-   1) 强制把 Contact 页面输入框改成深灰蓝
-   2) 修正输入文字、placeholder、边框和 autofill
-   ========================================================= */
-
-/* 系统 dark mode */
 @media (prefers-color-scheme: dark) {
   .ev-form input,
   .ev-form textarea,
@@ -1288,10 +871,8 @@ html[color-scheme="dark"] .ev-form textarea {
     background-color: #111827 !important;
     border-color: #3b82f6 !important;
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18) !important;
-    outline: none !important;
   }
 
-  /* Safari / Chrome 自动填充发白修复 */
   .ev-form input:-webkit-autofill,
   .ev-form input:-webkit-autofill:hover,
   .ev-form input:-webkit-autofill:focus,
@@ -1299,14 +880,13 @@ html[color-scheme="dark"] .ev-form textarea {
   .ev-form textarea:-webkit-autofill:hover,
   .ev-form textarea:-webkit-autofill:focus {
     -webkit-text-fill-color: #f9fafb !important;
-    -webkit-box-shadow: 0 0 0px 1000px #0f172a inset !important;
+    -webkit-box-shadow: 0 0 0 1000px #0f172a inset !important;
     -webkit-transition: background-color 9999s ease-in-out 0s !important;
     transition: background-color 9999s ease-in-out 0s !important;
     border: 1px solid rgba(148, 163, 184, 0.22) !important;
   }
 }
 
-/* 兼容主题手动切换 dark 模式 */
 html.dark .ev-form input,
 html.dark .ev-form textarea,
 html.dark .ev-form select,
@@ -1366,247 +946,169 @@ body[color-scheme="dark"] .ev-form textarea::placeholder {
 
 html.dark .ev-form input:focus,
 html.dark .ev-form textarea:focus,
+html.dark .ev-form select:focus,
 body.dark .ev-form input:focus,
 body.dark .ev-form textarea:focus,
+body.dark .ev-form select:focus,
 html[data-theme="dark"] .ev-form input:focus,
 html[data-theme="dark"] .ev-form textarea:focus,
-body[data-theme="dark"] .ev-form input:focus,
-body[data-theme="dark"] .ev-form textarea:focus,
+html[data-theme="dark"] .ev-form select:focus,
 html[data-color-scheme="dark"] .ev-form input:focus,
 html[data-color-scheme="dark"] .ev-form textarea:focus,
-body[data-color-scheme="dark"] .ev-form input:focus,
-body[data-color-scheme="dark"] .ev-form textarea:focus,
+html[data-color-scheme="dark"] .ev-form select:focus,
 html[color-scheme="dark"] .ev-form input:focus,
 html[color-scheme="dark"] .ev-form textarea:focus,
-body[color-scheme="dark"] .ev-form input:focus,
-body[color-scheme="dark"] .ev-form textarea:focus {
+html[color-scheme="dark"] .ev-form select:focus {
   background-color: #111827 !important;
   border-color: #3b82f6 !important;
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18) !important;
   outline: none !important;
 }
 
-html.dark .ev-form input:-webkit-autofill,
-html.dark .ev-form input:-webkit-autofill:hover,
-html.dark .ev-form input:-webkit-autofill:focus,
-html.dark .ev-form textarea:-webkit-autofill,
-html.dark .ev-form textarea:-webkit-autofill:hover,
-html.dark .ev-form textarea:-webkit-autofill:focus,
-body.dark .ev-form input:-webkit-autofill,
-body.dark .ev-form input:-webkit-autofill:hover,
-body.dark .ev-form input:-webkit-autofill:focus,
-body.dark .ev-form textarea:-webkit-autofill,
-body.dark .ev-form textarea:-webkit-autofill:hover,
-body.dark .ev-form textarea:-webkit-autofill:focus,
-html[data-theme="dark"] .ev-form input:-webkit-autofill,
-html[data-theme="dark"] .ev-form input:-webkit-autofill:hover,
-html[data-theme="dark"] .ev-form input:-webkit-autofill:focus,
-html[data-theme="dark"] .ev-form textarea:-webkit-autofill,
-html[data-theme="dark"] .ev-form textarea:-webkit-autofill:hover,
-html[data-theme="dark"] .ev-form textarea:-webkit-autofill:focus {
-  -webkit-text-fill-color: #f9fafb !important;
-  -webkit-box-shadow: 0 0 0px 1000px #0f172a inset !important;
-  -webkit-transition: background-color 9999s ease-in-out 0s !important;
-  transition: background-color 9999s ease-in-out 0s !important;
-  border: 1px solid rgba(148, 163, 184, 0.22) !important;
+/* =========================================================
+   SHARED BUTTON STYLE
+   通用按钮样式
+   ========================================================= */
+.ev-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 150px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: none;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
 }
 
-/* =========================================================
-   CONTACT INFO CARD DARK MODE OVERRIDE
-   左侧信息小卡片暗色模式强制覆盖
-   ---------------------------------------------------------
-   作用 / Purpose:
-   1) 强制把 Phone / Email / Address / Hours 小卡片改成深灰蓝
-   2) 修正其中的文字和链接颜色
-   ========================================================= */
+.ev-btn:hover {
+  transform: translateY(-1px);
+}
+
+.ev-btn-primary {
+  background: #0071e3;
+  color: #fff;
+}
+
+.ev-btn-primary:hover {
+  background: #005ecb;
+}
+
+.ev-btn-secondary {
+  background: #eef5ff;
+  color: #0071e3;
+}
+
+.ev-btn-secondary:hover {
+  background: #ddeaff;
+}
 
 @media (prefers-color-scheme: dark) {
-  .ev-contact-panel .ev-contact-info-card,
-  .ev-contact-sidebar .ev-contact-info-card {
-    background: #111827 !important;
-    border: 1px solid rgba(148, 163, 184, 0.12) !important;
-    box-shadow: none !important;
+  .ev-btn-secondary {
+    background: #1e3a8a;
+    color: #dbeafe;
   }
 
-  .ev-contact-panel .ev-contact-info-card strong,
-  .ev-contact-sidebar .ev-contact-info-card strong {
-    color: #94a3b8 !important;
-  }
-
-  .ev-contact-panel .ev-contact-info-card span,
-  .ev-contact-sidebar .ev-contact-info-card span,
-  .ev-contact-panel .ev-contact-info-card p,
-  .ev-contact-sidebar .ev-contact-info-card p {
-    color: #e5e7eb !important;
-  }
-
-  .ev-contact-panel .ev-contact-info-card a,
-  .ev-contact-sidebar .ev-contact-info-card a {
-    color: #60a5fa !important;
+  .ev-btn-secondary:hover {
+    background: #1d4ed8;
   }
 }
 
-/* 兼容主题手动切换 dark 模式 */
-html.dark .ev-contact-panel .ev-contact-info-card,
-html.dark .ev-contact-sidebar .ev-contact-info-card,
-body.dark .ev-contact-panel .ev-contact-info-card,
-body.dark .ev-contact-sidebar .ev-contact-info-card,
-html[data-theme="dark"] .ev-contact-panel .ev-contact-info-card,
-html[data-theme="dark"] .ev-contact-sidebar .ev-contact-info-card,
-body[data-theme="dark"] .ev-contact-panel .ev-contact-info-card,
-body[data-theme="dark"] .ev-contact-sidebar .ev-contact-info-card,
-html[data-color-scheme="dark"] .ev-contact-panel .ev-contact-info-card,
-html[data-color-scheme="dark"] .ev-contact-sidebar .ev-contact-info-card,
-body[data-color-scheme="dark"] .ev-contact-panel .ev-contact-info-card,
-body[data-color-scheme="dark"] .ev-contact-sidebar .ev-contact-info-card,
-html[color-scheme="dark"] .ev-contact-panel .ev-contact-info-card,
-html[color-scheme="dark"] .ev-contact-sidebar .ev-contact-info-card,
-body[color-scheme="dark"] .ev-contact-panel .ev-contact-info-card,
-body[color-scheme="dark"] .ev-contact-sidebar .ev-contact-info-card {
-  background: #111827 !important;
-  border: 1px solid rgba(148, 163, 184, 0.12) !important;
-  box-shadow: none !important;
+html.dark .ev-btn-secondary,
+body.dark .ev-btn-secondary,
+html[data-theme="dark"] .ev-btn-secondary,
+body[data-theme="dark"] .ev-btn-secondary,
+html[data-color-scheme="dark"] .ev-btn-secondary,
+body[data-color-scheme="dark"] .ev-btn-secondary,
+html[color-scheme="dark"] .ev-btn-secondary,
+body[color-scheme="dark"] .ev-btn-secondary {
+  background: #1e3a8a;
+  color: #dbeafe;
 }
 
-html.dark .ev-contact-panel .ev-contact-info-card strong,
-html.dark .ev-contact-sidebar .ev-contact-info-card strong,
-body.dark .ev-contact-panel .ev-contact-info-card strong,
-body.dark .ev-contact-sidebar .ev-contact-info-card strong,
-html[data-theme="dark"] .ev-contact-panel .ev-contact-info-card strong,
-html[data-theme="dark"] .ev-contact-sidebar .ev-contact-info-card strong,
-body[data-theme="dark"] .ev-contact-panel .ev-contact-info-card strong,
-body[data-theme="dark"] .ev-contact-sidebar .ev-contact-info-card strong,
-html[data-color-scheme="dark"] .ev-contact-panel .ev-contact-info-card strong,
-html[data-color-scheme="dark"] .ev-contact-sidebar .ev-contact-info-card strong,
-body[data-color-scheme="dark"] .ev-contact-panel .ev-contact-info-card strong,
-body[data-color-scheme="dark"] .ev-contact-sidebar .ev-contact-info-card strong,
-html[color-scheme="dark"] .ev-contact-panel .ev-contact-info-card strong,
-html[color-scheme="dark"] .ev-contact-sidebar .ev-contact-info-card strong,
-body[color-scheme="dark"] .ev-contact-panel .ev-contact-info-card strong,
-body[color-scheme="dark"] .ev-contact-sidebar .ev-contact-info-card strong {
-  color: #94a3b8 !important;
-}
-
-html.dark .ev-contact-panel .ev-contact-info-card span,
-html.dark .ev-contact-sidebar .ev-contact-info-card span,
-html.dark .ev-contact-panel .ev-contact-info-card p,
-html.dark .ev-contact-sidebar .ev-contact-info-card p,
-body.dark .ev-contact-panel .ev-contact-info-card span,
-body.dark .ev-contact-sidebar .ev-contact-info-card span,
-body.dark .ev-contact-panel .ev-contact-info-card p,
-body.dark .ev-contact-sidebar .ev-contact-info-card p,
-html[data-theme="dark"] .ev-contact-panel .ev-contact-info-card span,
-html[data-theme="dark"] .ev-contact-sidebar .ev-contact-info-card span,
-html[data-theme="dark"] .ev-contact-panel .ev-contact-info-card p,
-html[data-theme="dark"] .ev-contact-sidebar .ev-contact-info-card p,
-html[data-color-scheme="dark"] .ev-contact-panel .ev-contact-info-card span,
-html[data-color-scheme="dark"] .ev-contact-sidebar .ev-contact-info-card span,
-html[data-color-scheme="dark"] .ev-contact-panel .ev-contact-info-card p,
-html[data-color-scheme="dark"] .ev-contact-sidebar .ev-contact-info-card p,
-html[color-scheme="dark"] .ev-contact-panel .ev-contact-info-card span,
-html[color-scheme="dark"] .ev-contact-sidebar .ev-contact-info-card span,
-html[color-scheme="dark"] .ev-contact-panel .ev-contact-info-card p,
-html[color-scheme="dark"] .ev-contact-sidebar .ev-contact-info-card p {
-  color: #e5e7eb !important;
-}
-
-html.dark .ev-contact-panel .ev-contact-info-card a,
-html.dark .ev-contact-sidebar .ev-contact-info-card a,
-body.dark .ev-contact-panel .ev-contact-info-card a,
-body.dark .ev-contact-sidebar .ev-contact-info-card a,
-html[data-theme="dark"] .ev-contact-panel .ev-contact-info-card a,
-html[data-theme="dark"] .ev-contact-sidebar .ev-contact-info-card a,
-body[data-theme="dark"] .ev-contact-panel .ev-contact-info-card a,
-body[data-theme="dark"] .ev-contact-sidebar .ev-contact-info-card a,
-html[data-color-scheme="dark"] .ev-contact-panel .ev-contact-info-card a,
-html[data-color-scheme="dark"] .ev-contact-sidebar .ev-contact-info-card a,
-body[data-color-scheme="dark"] .ev-contact-panel .ev-contact-info-card a,
-body[data-color-scheme="dark"] .ev-contact-sidebar .ev-contact-info-card a,
-html[color-scheme="dark"] .ev-contact-panel .ev-contact-info-card a,
-html[color-scheme="dark"] .ev-contact-sidebar .ev-contact-info-card a,
-body[color-scheme="dark"] .ev-contact-panel .ev-contact-info-card a,
-body[color-scheme="dark"] .ev-contact-sidebar .ev-contact-info-card a {
-  color: #60a5fa !important;
+html.dark .ev-btn-secondary:hover,
+body.dark .ev-btn-secondary:hover,
+html[data-theme="dark"] .ev-btn-secondary:hover,
+body[data-theme="dark"] .ev-btn-secondary:hover,
+html[data-color-scheme="dark"] .ev-btn-secondary:hover,
+body[data-color-scheme="dark"] .ev-btn-secondary:hover,
+html[color-scheme="dark"] .ev-btn-secondary:hover,
+body[color-scheme="dark"] .ev-btn-secondary:hover {
+  background: #1d4ed8;
 }
 
 /* =========================================================
-   HOURS VISIBILITY FIX (FINAL)
-   Hours 文字增强对比度
+   STICKY CONTACT BAR
+   右下角悬浮操作栏
    ========================================================= */
-
-/* 系统 dark */
-@media (prefers-color-scheme: dark) {
-  .ev-hours-list span {
-    color: #cbd5f5 !important;   /* 更亮一点蓝灰 */
-    font-weight: 500;
-  }
+.ev-sticky-contact-bar {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1200;
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(173, 198, 226, 0.16);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 999px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
 }
 
-/* 主题 dark */
-html.dark .ev-hours-list span,
-body.dark .ev-hours-list span,
-html[data-theme="dark"] .ev-hours-list span,
-html[data-color-scheme="dark"] .ev-hours-list span,
-html[color-scheme="dark"] .ev-hours-list span {
-  color: #cbd5f5 !important;
-  font-weight: 500;
+.ev-sticky-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
 }
 
-/* =========================================================
-   FLOATING BAR BORDER FIX
-   悬浮按钮外框不刺眼
-   ========================================================= */
+.ev-sticky-call {
+  background: #111827;
+  color: #fff;
+}
 
-/* 系统 dark */
+.ev-sticky-book {
+  background: #0071e3;
+  color: #fff;
+}
+
 @media (prefers-color-scheme: dark) {
   .ev-sticky-contact-bar {
-    border: 1px solid rgba(148, 163, 184, 0.15) !important;
+    background: rgba(17, 24, 39, 0.86);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
   }
 }
 
-/* 主题 dark */
 html.dark .ev-sticky-contact-bar,
 body.dark .ev-sticky-contact-bar,
 html[data-theme="dark"] .ev-sticky-contact-bar,
+body[data-theme="dark"] .ev-sticky-contact-bar,
 html[data-color-scheme="dark"] .ev-sticky-contact-bar,
-html[color-scheme="dark"] .ev-sticky-contact-bar {
-  border: 1px solid rgba(148, 163, 184, 0.15) !important;
+body[data-color-scheme="dark"] .ev-sticky-contact-bar,
+html[color-scheme="dark"] .ev-sticky-contact-bar,
+body[color-scheme="dark"] .ev-sticky-contact-bar {
+  background: rgba(17, 24, 39, 0.86);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
 }
 
 /* =========================================================
    OPEN STATUS (LIVE)
    实时营业状态
    ========================================================= */
-
-.ev-open-status {
-  margin-bottom: 12px;
-  padding: 10px 14px;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-/* 开门 */
-.ev-open-status.open {
-  background: rgba(16, 185, 129, 0.15);
-  color: #34d399;
-}
-
-/* 关闭 */
-.ev-open-status.closed {
-  background: rgba(239, 68, 68, 0.15);
-  color: #f87171;
-}
-
-/* =========================================================
-   HOURS FINAL FIX
-   Hours 最终修复
-   ---------------------------------------------------------
-   作用 / Purpose:
-   1) 修复营业时间文字太暗
-   2) 修复状态条样式
-   ========================================================= */
-
 .ev-open-status {
   margin-bottom: 12px;
   padding: 10px 14px;
@@ -1618,20 +1120,94 @@ html[color-scheme="dark"] .ev-sticky-contact-bar {
 
 .ev-open-status.open {
   background: rgba(16, 185, 129, 0.16);
-  color: #34d399;
+  color: #16a34a;
 }
 
 .ev-open-status.closed {
   background: rgba(239, 68, 68, 0.16);
-  color: #f87171;
+  color: #dc2626;
 }
 
 @media (prefers-color-scheme: dark) {
+  .ev-open-status.open {
+    color: #34d399;
+  }
+
+  .ev-open-status.closed {
+    color: #f87171;
+  }
+}
+
+html.dark .ev-open-status.open,
+body.dark .ev-open-status.open,
+html[data-theme="dark"] .ev-open-status.open,
+body[data-theme="dark"] .ev-open-status.open,
+html[data-color-scheme="dark"] .ev-open-status.open,
+body[data-color-scheme="dark"] .ev-open-status.open,
+html[color-scheme="dark"] .ev-open-status.open,
+body[color-scheme="dark"] .ev-open-status.open {
+  color: #34d399;
+}
+
+html.dark .ev-open-status.closed,
+body.dark .ev-open-status.closed,
+html[data-theme="dark"] .ev-open-status.closed,
+body[data-theme="dark"] .ev-open-status.closed,
+html[data-color-scheme="dark"] .ev-open-status.closed,
+body[data-color-scheme="dark"] .ev-open-status.closed,
+html[color-scheme="dark"] .ev-open-status.closed,
+body[color-scheme="dark"] .ev-open-status.closed {
+  color: #f87171;
+}
+
+/* =========================================================
+   TODAY HOURS / HOURS LIST
+   动态今日营业时间 / 完整营业时间
+   ========================================================= */
+.ev-today-hours {
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #eef5ff;
+  color: #005ecb;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.ev-hours-list {
+  display: grid;
+  gap: 4px;
+}
+
+.ev-hours-list span {
+  color: #1d1d1f;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ev-today-hours {
+    background: rgba(30, 64, 175, 0.2);
+    color: #bfdbfe;
+  }
+
   .ev-hours-list span {
     color: #cbd5e1 !important;
     opacity: 1 !important;
     font-weight: 500;
   }
+}
+
+html.dark .ev-today-hours,
+body.dark .ev-today-hours,
+html[data-theme="dark"] .ev-today-hours,
+body[data-theme="dark"] .ev-today-hours,
+html[data-color-scheme="dark"] .ev-today-hours,
+body[data-color-scheme="dark"] .ev-today-hours,
+html[color-scheme="dark"] .ev-today-hours,
+body[color-scheme="dark"] .ev-today-hours {
+  background: rgba(30, 64, 175, 0.2);
+  color: #bfdbfe;
 }
 
 html.dark .ev-hours-list span,
@@ -1646,3 +1222,443 @@ body[color-scheme="dark"] .ev-hours-list span {
   opacity: 1 !important;
   font-weight: 500;
 }
+
+/* =========================================================
+   FOOTER HOURS STATUS
+   页脚动态营业状态
+   ========================================================= */
+.footer-hours-open {
+  color: #16a34a !important;
+  font-weight: 700;
+}
+
+.footer-hours-closed {
+  color: #dc2626 !important;
+  font-weight: 700;
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer-hours-open {
+    color: #4ade80 !important;
+  }
+
+  .footer-hours-closed {
+    color: #f87171 !important;
+  }
+}
+
+html.dark .footer-hours-open,
+body.dark .footer-hours-open,
+html[data-theme="dark"] .footer-hours-open,
+body[data-theme="dark"] .footer-hours-open,
+html[data-color-scheme="dark"] .footer-hours-open,
+body[data-color-scheme="dark"] .footer-hours-open,
+html[color-scheme="dark"] .footer-hours-open,
+body[color-scheme="dark"] .footer-hours-open {
+  color: #4ade80 !important;
+}
+
+html.dark .footer-hours-closed,
+body.dark .footer-hours-closed,
+html[data-theme="dark"] .footer-hours-closed,
+body[data-theme="dark"] .footer-hours-closed,
+html[data-color-scheme="dark"] .footer-hours-closed,
+body[data-color-scheme="dark"] .footer-hours-closed,
+html[color-scheme="dark"] .footer-hours-closed,
+body[color-scheme="dark"] .footer-hours-closed {
+  color: #f87171 !important;
+}
+
+/* =========================================================
+   FOOTER SPACING UTILITY
+   页脚统一间距工具类
+   ========================================================= */
+.footer-spacer {
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* =========================================================
+   FOOTER HOURS FIRST LINE SPACING
+   页脚 Hours 第一行下面留空
+   ========================================================= */
+footer .footer-group:nth-child(2) li:first-child,
+footer .footer-column:nth-child(2) li:first-child {
+  margin-bottom: 12px;
+}
+
+/* =========================================================
+   RESPONSIVE: TABLET AND BELOW
+   平板及以下适配
+   ========================================================= */
+@media (max-width: 980px) {
+  .ev-contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ev-contact-sidebar {
+    position: static;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE: MOBILE
+   手机端适配
+   ========================================================= */
+@media (max-width: 768px) {
+  .ev-contact-layout {
+    padding: 16px 16px 110px;
+  }
+
+  .ev-contact-panel,
+  .ev-form-card {
+    padding: 24px 20px;
+    border-radius: 22px;
+  }
+
+  .ev-contact-panel h1 {
+    font-size: 38px;
+  }
+
+  .ev-form-card h2 {
+    font-size: 30px;
+  }
+
+  .ev-sticky-contact-bar {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    justify-content: stretch;
+  }
+
+  .ev-sticky-btn {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+/* =========================================================
+   CONTACT PAGE DARK MODE HARD OVERRIDE
+   Contact 页面暗色模式最终强制覆盖
+   ---------------------------------------------------------
+   作用 / Purpose:
+   1) 修复暗色模式下 Contact 大卡片变白
+   2) 修复左侧 info 小卡片变白
+   3) 修复输入框、文字、链接颜色
+   4) 同时兼容系统 dark + 主题手动 dark
+   ========================================================= */
+
+/* 系统 dark mode */
+@media (prefers-color-scheme: dark) {
+  .ev-contact-panel,
+  .ev-form-card {
+    background: #111827 !important;
+    border: 1px solid rgba(148, 163, 184, 0.12) !important;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45) !important;
+  }
+
+  .ev-contact-info-card {
+    background: #0f172a !important;
+    border: 1px solid rgba(148, 163, 184, 0.12) !important;
+    box-shadow: none !important;
+  }
+
+  .ev-contact-panel h1,
+  .ev-form-card h2,
+  .ev-form label,
+  .ev-contact-panel,
+  .ev-form-card,
+  .ev-contact-info-card span,
+  .ev-contact-info-card p,
+  .ev-hours-list span {
+    color: #e5e7eb !important;
+  }
+
+  .ev-contact-kicker,
+  .ev-contact-lead,
+  .ev-contact-section-label,
+  .ev-form-intro,
+  .ev-contact-info-card strong {
+    color: #94a3b8 !important;
+  }
+
+  .ev-contact-info-card a {
+    color: #60a5fa !important;
+  }
+
+  .ev-form input,
+  .ev-form textarea,
+  .ev-form select {
+    background: #0f172a !important;
+    color: #f9fafb !important;
+    border: 1px solid rgba(148, 163, 184, 0.22) !important;
+    -webkit-text-fill-color: #f9fafb !important;
+  }
+
+  .ev-form input::-moz-placeholder, .ev-form textarea::-moz-placeholder, .ev-form select::-moz-placeholder {
+    color: #94a3b8 !important;
+    opacity: 1 !important;
+  }
+
+  .ev-form input::placeholder,
+  .ev-form textarea::placeholder,
+  .ev-form select::placeholder {
+    color: #94a3b8 !important;
+    opacity: 1 !important;
+  }
+
+  .ev-form input:focus,
+  .ev-form textarea:focus,
+  .ev-form select:focus {
+    background: #111827 !important;
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18) !important;
+  }
+}
+
+/* 主题手动 dark / auto dark 强制兼容 */
+html.dark .ev-contact-panel,
+body.dark .ev-contact-panel,
+html[data-theme="dark"] .ev-contact-panel,
+body[data-theme="dark"] .ev-contact-panel,
+html[data-color-scheme="dark"] .ev-contact-panel,
+body[data-color-scheme="dark"] .ev-contact-panel,
+html[color-scheme="dark"] .ev-contact-panel,
+body[color-scheme="dark"] .ev-contact-panel,
+html.dark .ev-form-card,
+body.dark .ev-form-card,
+html[data-theme="dark"] .ev-form-card,
+body[data-theme="dark"] .ev-form-card,
+html[data-color-scheme="dark"] .ev-form-card,
+body[data-color-scheme="dark"] .ev-form-card,
+html[color-scheme="dark"] .ev-form-card,
+body[color-scheme="dark"] .ev-form-card {
+  background: #111827 !important;
+  border: 1px solid rgba(148, 163, 184, 0.12) !important;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45) !important;
+}
+
+html.dark .ev-contact-info-card,
+body.dark .ev-contact-info-card,
+html[data-theme="dark"] .ev-contact-info-card,
+body[data-theme="dark"] .ev-contact-info-card,
+html[data-color-scheme="dark"] .ev-contact-info-card,
+body[data-color-scheme="dark"] .ev-contact-info-card,
+html[color-scheme="dark"] .ev-contact-info-card,
+body[color-scheme="dark"] .ev-contact-info-card {
+  background: #0f172a !important;
+  border: 1px solid rgba(148, 163, 184, 0.12) !important;
+  box-shadow: none !important;
+}
+
+html.dark .ev-contact-panel h1,
+html.dark .ev-form-card h2,
+html.dark .ev-form label,
+html.dark .ev-contact-panel,
+html.dark .ev-form-card,
+html.dark .ev-contact-info-card span,
+html.dark .ev-contact-info-card p,
+html.dark .ev-hours-list span,
+body.dark .ev-contact-panel h1,
+body.dark .ev-form-card h2,
+body.dark .ev-form label,
+body.dark .ev-contact-panel,
+body.dark .ev-form-card,
+body.dark .ev-contact-info-card span,
+body.dark .ev-contact-info-card p,
+body.dark .ev-hours-list span,
+html[data-theme="dark"] .ev-contact-panel h1,
+html[data-theme="dark"] .ev-form-card h2,
+html[data-theme="dark"] .ev-form label,
+html[data-theme="dark"] .ev-contact-panel,
+html[data-theme="dark"] .ev-form-card,
+html[data-theme="dark"] .ev-contact-info-card span,
+html[data-theme="dark"] .ev-contact-info-card p,
+html[data-theme="dark"] .ev-hours-list span,
+html[data-color-scheme="dark"] .ev-contact-panel h1,
+html[data-color-scheme="dark"] .ev-form-card h2,
+html[data-color-scheme="dark"] .ev-form label,
+html[data-color-scheme="dark"] .ev-contact-panel,
+html[data-color-scheme="dark"] .ev-form-card,
+html[data-color-scheme="dark"] .ev-contact-info-card span,
+html[data-color-scheme="dark"] .ev-contact-info-card p,
+html[data-color-scheme="dark"] .ev-hours-list span,
+html[color-scheme="dark"] .ev-contact-panel h1,
+html[color-scheme="dark"] .ev-form-card h2,
+html[color-scheme="dark"] .ev-form label,
+html[color-scheme="dark"] .ev-contact-panel,
+html[color-scheme="dark"] .ev-form-card,
+html[color-scheme="dark"] .ev-contact-info-card span,
+html[color-scheme="dark"] .ev-contact-info-card p,
+html[color-scheme="dark"] .ev-hours-list span {
+  color: #e5e7eb !important;
+}
+
+html.dark .ev-contact-kicker,
+html.dark .ev-contact-lead,
+html.dark .ev-contact-section-label,
+html.dark .ev-form-intro,
+html.dark .ev-contact-info-card strong,
+body.dark .ev-contact-kicker,
+body.dark .ev-contact-lead,
+body.dark .ev-contact-section-label,
+body.dark .ev-form-intro,
+body.dark .ev-contact-info-card strong,
+html[data-theme="dark"] .ev-contact-kicker,
+html[data-theme="dark"] .ev-contact-lead,
+html[data-theme="dark"] .ev-contact-section-label,
+html[data-theme="dark"] .ev-form-intro,
+html[data-theme="dark"] .ev-contact-info-card strong,
+html[data-color-scheme="dark"] .ev-contact-kicker,
+html[data-color-scheme="dark"] .ev-contact-lead,
+html[data-color-scheme="dark"] .ev-contact-section-label,
+html[data-color-scheme="dark"] .ev-form-intro,
+html[data-color-scheme="dark"] .ev-contact-info-card strong,
+html[color-scheme="dark"] .ev-contact-kicker,
+html[color-scheme="dark"] .ev-contact-lead,
+html[color-scheme="dark"] .ev-contact-section-label,
+html[color-scheme="dark"] .ev-form-intro,
+html[color-scheme="dark"] .ev-contact-info-card strong {
+  color: #94a3b8 !important;
+}
+
+html.dark .ev-contact-info-card a,
+body.dark .ev-contact-info-card a,
+html[data-theme="dark"] .ev-contact-info-card a,
+body[data-theme="dark"] .ev-contact-info-card a,
+html[data-color-scheme="dark"] .ev-contact-info-card a,
+body[data-color-scheme="dark"] .ev-contact-info-card a,
+html[color-scheme="dark"] .ev-contact-info-card a,
+body[color-scheme="dark"] .ev-contact-info-card a {
+  color: #60a5fa !important;
+}
+
+html.dark .ev-form input,
+html.dark .ev-form textarea,
+html.dark .ev-form select,
+body.dark .ev-form input,
+body.dark .ev-form textarea,
+body.dark .ev-form select,
+html[data-theme="dark"] .ev-form input,
+html[data-theme="dark"] .ev-form textarea,
+html[data-theme="dark"] .ev-form select,
+body[data-theme="dark"] .ev-form input,
+body[data-theme="dark"] .ev-form textarea,
+body[data-theme="dark"] .ev-form select,
+html[data-color-scheme="dark"] .ev-form input,
+html[data-color-scheme="dark"] .ev-form textarea,
+html[data-color-scheme="dark"] .ev-form select,
+body[data-color-scheme="dark"] .ev-form input,
+body[data-color-scheme="dark"] .ev-form textarea,
+body[data-color-scheme="dark"] .ev-form select,
+html[color-scheme="dark"] .ev-form input,
+html[color-scheme="dark"] .ev-form textarea,
+html[color-scheme="dark"] .ev-form select,
+body[color-scheme="dark"] .ev-form input,
+body[color-scheme="dark"] .ev-form textarea,
+body[color-scheme="dark"] .ev-form select {
+  background: #0f172a !important;
+  color: #f9fafb !important;
+  border: 1px solid rgba(148, 163, 184, 0.22) !important;
+  -webkit-text-fill-color: #f9fafb !important;
+}
+
+/* =========================================================
+   FOOTER REAL GRID LAYOUT
+   页脚真实结构三列 Grid 布局
+   ---------------------------------------------------------
+   作用 / Purpose:
+   1) 精准命中当前主题 footer.ejs 结构
+   2) links 改成更均匀的三列布局
+   3) 拉开 Hours 和 Location & Legal 距离
+   4) 手机端自动改为单列
+   ========================================================= */
+
+/* 桌面端：三列 */
+@media (min-width: 981px) {
+  footer .inner .links {
+    display: grid !important;
+    grid-template-columns: minmax(180px, 1fr) minmax(240px, 1.15fr) minmax(240px, 1.15fr);
+    -moz-column-gap: 84px;
+         column-gap: 84px;
+    row-gap: 24px;
+    align-items: start;
+  }
+
+  footer .inner .links .group {
+    min-width: 0;
+    margin: 0 !important;
+  }
+}
+
+/* 手机和平板：单列 */
+@media (max-width: 980px) {
+  footer .inner .links {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+
+  footer .inner .links .group {
+    margin: 0 !important;
+  }
+}
+
+/* =========================================================
+   FOOTER GROUP TYPOGRAPHY
+   页脚列标题和内容统一
+   ---------------------------------------------------------
+   作用 / Purpose:
+   1) 让三列标题和内容间距更稳定
+   2) links 垂直排列更整齐
+   ========================================================= */
+footer .inner .links .group .title {
+  margin-bottom: 12px;
+}
+
+footer .inner .links .group .item {
+  display: block;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   FOOTER HOURS COLUMN MICRO-SPACING
+   页脚 Hours 列微调
+   ---------------------------------------------------------
+   作用 / Purpose:
+   1) 状态行下面留一点空
+   2) Today 和 View full hours 保持紧凑
+   ========================================================= */
+footer .inner .links .group:nth-child(2) .item:first-of-type {
+  margin-bottom: 12px;
+}
+
+/* =========================================================
+   HOURS STATUS FONT TUNING
+   营业状态字体优化（Contact + Footer）
+   ---------------------------------------------------------
+   作用 / Purpose:
+   1) 缩小 Closed Now / Open Now 字体
+   2) 更接近 Apple / UCLA 风格（更精致）
+   ========================================================= */
+
+/* Contact 页面状态 */
+.ev-open-status {
+  font-size: 12.5px;      /* 原来大概 14-15px */
+  font-weight: 500;     /* 稍微收一点 */
+  letter-spacing: 0.3px;
+}
+
+/* Footer 状态 */
+.footer-hours-open,
+.footer-hours-closed {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* 如果想再精致一点（推荐） */
+footer .inner .links .group:nth-child(2) .item:first-of-type {
+  font-size: 13px;
+  font-weight: 600;
+}
+

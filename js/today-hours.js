@@ -1,19 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const statusEl = document.getElementById("open-status");
-  if (!statusEl) return;
+  const contactStatusEl = document.getElementById("open-status");
+  const footerStatusEl = document.getElementById("footer-open-status");
+  const footerTodayEl = document.getElementById("footer-today-hours");
 
   const now = new Date();
   const day = now.getDay(); // 0 = Sun, 1 = Mon, ...
   const currentMinutes = now.getHours() * 60 + now.getMinutes();
 
   const schedule = {
-    0: { open: 10 * 60, close: 14 * 60, label: "Sun" },
+    0: { open: 10 * 60, close: 14 * 60, label: "Sun", display: "Sun: 10:00 AM - 2:00 PM" },
     1: null,
-    2: { open: 10 * 60, close: 16 * 60, label: "Tue" },
-    3: { open: 10 * 60, close: 16 * 60, label: "Wed" },
-    4: { open: 10 * 60, close: 16 * 60, label: "Thu" },
-    5: { open: 10 * 60, close: 17 * 60, label: "Fri" },
-    6: { open: 10 * 60, close: 16 * 60, label: "Sat" }
+    2: { open: 10 * 60, close: 16 * 60, label: "Tue", display: "Tue: 10:00 AM - 4:00 PM" },
+    3: { open: 10 * 60, close: 16 * 60, label: "Wed", display: "Wed: 10:00 AM - 4:00 PM" },
+    4: { open: 10 * 60, close: 16 * 60, label: "Thu", display: "Thu: 10:00 AM - 4:00 PM" },
+    5: { open: 10 * 60, close: 17 * 60, label: "Fri", display: "Fri: 10:00 AM - 5:00 PM" },
+    6: { open: 10 * 60, close: 16 * 60, label: "Sat", display: "Sat: 10:00 AM - 4:00 PM" }
   };
 
   function formatTime(minutes) {
@@ -24,29 +25,59 @@ document.addEventListener("DOMContentLoaded", function () {
     return `${h}:${String(m).padStart(2, "0")} ${ampm}`;
   }
 
-  statusEl.classList.remove("open", "closed");
+  function getStatusText() {
+    const today = schedule[day];
 
-  const today = schedule[day];
+    if (today) {
+      if (currentMinutes >= today.open && currentMinutes < today.close) {
+        return {
+          text: `Open Now — closes at ${formatTime(today.close)}`,
+          state: "open"
+        };
+      }
 
-  if (today) {
-    if (currentMinutes >= today.open && currentMinutes < today.close) {
-      statusEl.textContent = `Open Now — closes at ${formatTime(today.close)}`;
-      statusEl.classList.add("open");
-      return;
+      if (currentMinutes < today.open) {
+        return {
+          text: `Closed Now — opens at ${formatTime(today.open)}`,
+          state: "closed"
+        };
+      }
     }
 
-    if (currentMinutes < today.open) {
-      statusEl.textContent = `Closed Now — opens at ${formatTime(today.open)}`;
-      statusEl.classList.add("closed");
-      return;
+    let nextDay = (day + 1) % 7;
+    while (!schedule[nextDay]) {
+      nextDay = (nextDay + 1) % 7;
     }
+
+    return {
+      text: `Closed Now — opens ${schedule[nextDay].label} at ${formatTime(schedule[nextDay].open)}`,
+      state: "closed"
+    };
   }
 
-  let nextDay = (day + 1) % 7;
-  while (!schedule[nextDay]) {
-    nextDay = (nextDay + 1) % 7;
+  function getTodayDisplay() {
+    const today = schedule[day];
+    if (!today) {
+      return "Today: Mon: Closed";
+    }
+    return `Today: ${today.display}`;
   }
 
-  statusEl.textContent = `Closed Now — opens ${schedule[nextDay].label} at ${formatTime(schedule[nextDay].open)}`;
-  statusEl.classList.add("closed");
+  const status = getStatusText();
+  const todayDisplay = getTodayDisplay();
+
+  if (contactStatusEl) {
+    contactStatusEl.textContent = status.text;
+    contactStatusEl.classList.remove("open", "closed");
+    contactStatusEl.classList.add(status.state);
+  }
+
+  if (footerStatusEl) {
+    footerStatusEl.textContent = status.text;
+    footerStatusEl.className = status.state === "open" ? "footer-hours-open" : "footer-hours-closed";
+  }
+
+  if (footerTodayEl) {
+    footerTodayEl.textContent = todayDisplay;
+  }
 });

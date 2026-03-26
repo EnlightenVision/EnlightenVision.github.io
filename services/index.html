@@ -1,46 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <link rel="icon" type="image/png" href="/images/favicon.png">
-<script src="/js/today-hours.js" defer></script>
-<link rel="stylesheet" href="/css/custom.css">
-
-<head prefix="og: https://ogp.me/ns#">
+  <head prefix="og: https://ogp.me/ns#">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
+
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <script src="/js/today-hours.js" defer></script>
+  <link rel="stylesheet" href="/css/custom.css">
+
   
+
   <title>Our Services - EnlightenVision</title>
+
   
     <link rel="shortcut icon" href="/favicon.png">
   
+
   
-  <link rel='manifest' href='/manifest.json'>
+    <link rel="manifest" href="/manifest.json">
   
 
-  <meta name="description" content="ServicesOptometry Comprehensive eye exams, vision testing, and non-surgical treatment support.  Eyeglasses Prescription glasses guidance, fitting support, and eyewear consultation.  Contact Lens Conta">
+  <meta name="description" content="Services • Vision Care     Advanced eye care, designed around the way you live.            At EnlightenVision Optometry, we provide thoughtful, modern eye care for children, adults, and famil">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Our Services">
 <meta property="og:url" content="https://enlightenvision.github.io/services/index.html">
 <meta property="og:site_name" content="EnlightenVision">
-<meta property="og:description" content="ServicesOptometry Comprehensive eye exams, vision testing, and non-surgical treatment support.  Eyeglasses Prescription glasses guidance, fitting support, and eyewear consultation.  Contact Lens Conta">
+<meta property="og:description" content="Services • Vision Care     Advanced eye care, designed around the way you live.            At EnlightenVision Optometry, we provide thoughtful, modern eye care for children, adults, and famil">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2026-03-21T01:19:23.054Z">
-<meta property="article:modified_time" content="2026-03-21T01:19:23.054Z">
+<meta property="og:image" content="https://enlightenvision.github.io/images/services-hero.jpg">
+<meta property="og:image" content="https://enlightenvision.github.io/images/eye-exam.jpg">
+<meta property="article:published_time" content="2026-03-26T08:25:43.776Z">
+<meta property="article:modified_time" content="2026-03-26T08:25:43.776Z">
 <meta property="article:author" content="Jay Jiang">
 <meta property="article:tag" content="optometry, eye exam, pico rivera, contact lens, eyeglasses, vision care">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://enlightenvision.github.io/images/services-hero.jpg">
 
   <script>window.ThemeCupertino = {}</script>
 
   <link rel="preconnect" href="https://rsms.me/">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
   
-  
+    
 <link rel="stylesheet" href="https://unpkg.com/simple-icons-font@16/font/simple-icons.min.css">
 
   
+
   
-  
+    
 <link rel="stylesheet" href="https://unpkg.com/bootstrap-icons@1/font/bootstrap-icons.min.css">
 
   
@@ -59,35 +68,35 @@
 
 
   
-  
+    
 <link rel="stylesheet" href="/css/components/card.css">
 
   
   
-  
+    
 <link rel="stylesheet" href="/css/components/button.css">
 
   
   
-  
+    
 <link rel="stylesheet" href="/css/components/badge.css">
 
   
   
-  
+    
 <link rel="stylesheet" href="/css/components/utilities.css">
 
   
   
-  
+    
 <link rel="stylesheet" href="/css/components/carousel.css">
 
   
   
-  <script>ThemeCupertino['_calloutStyles'] = `
+    <script>ThemeCupertino['_calloutStyles'] = `
 <link rel="stylesheet" href="/css/components/callout.css">
 `</script>
-  
+    
 <script src="/js/components/callout.js"></script>
 
   
@@ -104,29 +113,42 @@
   
 <link rel="stylesheet" href="/css/post-list.css">
 
+
   
   
-  
+    
 <link rel="stylesheet" href="/css/toc.css">
 
   
   
   
-  
+    
 <link rel="stylesheet" href="/css/post.css">
 
   
   
+
   
+    
+<link rel="stylesheet" href="/pagefind/pagefind-ui.css">
+
+    
+<script src="/pagefind/pagefind-ui.js"></script>
+
+    
+<link rel="stylesheet" href="/css/search.css">
+
   
-  
-  
-  
-<link rel="stylesheet" href="/css/scroll-reveal.css">
 
   
   
   
+    
+<link rel="stylesheet" href="/css/scroll-reveal.css">
+
+  
+  
+    
 <link rel="stylesheet" href="/css/view-transition.css">
 
   
@@ -135,9 +157,51 @@
   
 <script src="/js/head.js"></script>
 
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const hero = document.querySelector('.ev-home-hero');
+      if (!hero) return;
+
+      const title = hero.querySelector('.title');
+      const desc = hero.querySelector('.description');
+
+      function updateHeroEffect() {
+        const y = window.scrollY || window.pageYOffset || 0;
+
+        /* 数值越大，效果越慢、越柔和 */
+        const maxScroll = 300;
+
+        /* Apple 风 easing */
+        const raw = Math.min(y / maxScroll, 1);
+        const progress = 1 - Math.pow(1 - raw, 2);
+
+        /* 整体 hero 的缩小 / 淡出 / 模糊 */
+        const heroScale = 1 - progress * 0.12;
+        const heroOpacity = 1 - progress * 0.95;
+        const heroBlur = progress * 18;
+
+        hero.style.transform = `scale(${heroScale})`;
+        hero.style.opacity = String(heroOpacity);
+        hero.style.filter = `blur(${heroBlur}px)`;
+
+        /* 标题和副标题做微弱位移，让层次更自然 */
+        if (title) {
+          title.style.transform = `translateY(${progress * -10}px)`;
+        }
+
+        if (desc) {
+          desc.style.transform = `translateY(${progress * -6}px)`;
+        }
+      }
+
+      updateHeroEffect();
+      window.addEventListener('scroll', updateHeroEffect, { passive: true });
+    });
+  </script>
+
   
 <meta name="generator" content="Hexo 8.1.1"></head>
-
   <body
     data-color-scheme="auto"
     data-uppercase-categories="true"
@@ -167,6 +231,8 @@
 
     <ul class="ev-nav">
       
+        
+
         
           <li class="ev-nav-item ev-has-dropdown">
             <a href="/services" class="ev-nav-link">
@@ -198,6 +264,8 @@
         
       
         
+
+        
           <li class="ev-nav-item ev-has-dropdown">
             <a href="/about" class="ev-nav-link">
               About Us
@@ -228,6 +296,8 @@
         
       
         
+
+        
           <li class="ev-nav-item ev-has-dropdown">
             <a href="/contact" class="ev-nav-link">
               Contact Us
@@ -236,19 +306,19 @@
             <ul class="ev-dropdown">
               
                 <li>
-                  <a href="/contact">
-                    Contact Us
+                  <a href="/contact#contact-form">
+                    Contact Form
                   </a>
                 </li>
               
                 <li>
-                  <a href="/contact">
+                  <a href="/contact#contact-form">
                     Send Message
                   </a>
                 </li>
               
                 <li>
-                  <a href="/contact">
+                  <a href="/contact#appointment">
                     Book Appointment
                   </a>
                 </li>
@@ -258,18 +328,29 @@
         
       
         
+
+        
           <li class="ev-nav-item">
-            <a target="_blank" rel="noopener" href="https://github.com/EnlightenVision" class="ev-nav-link">
-              <i class="bi bi-github"></i>
-            </a>
+            
+              <a href="mailto:enlightenvision@hotmail.com" class="ev-nav-link ev-nav-icon-link" aria-label="Email">
+                <svg class="ev-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                  <path d="M3 7l9 6 9-6"></path>
+                </svg>
+              </a>
+            
           </li>
         
       
         
+
+        
           <li class="ev-nav-item">
-            <a href="/search" class="ev-nav-link">
-              <i class="bi bi-search"></i>
-            </a>
+            
+              <a href="/search/" class="ev-nav-link">
+                <i class="bi bi-search"></i>
+              </a>
+            
           </li>
         
       
@@ -291,17 +372,145 @@
   </div>
 
   <div class="content">
-    <h1 id="Services"><a href="#Services" class="headerlink" title="Services"></a>Services</h1><h2 id="optometry">Optometry</h2>
-<p>Comprehensive eye exams, vision testing, and non-surgical treatment support.</p>
+    <div class="ev-apple-page ev-services-page">
 
-<h2 id="eyeglasses">Eyeglasses</h2>
-<p>Prescription glasses guidance, fitting support, and eyewear consultation.</p>
+  <section class="ev-hero ev-reveal" id="services-top">
+    <p class="ev-kicker">Services • Vision Care</p>
+    <h1 class="ev-hero-title">Advanced eye care, designed around the way you live.</h1>
+    <p class="ev-hero-lead">
+      At EnlightenVision Optometry, we provide thoughtful, modern eye care for children, adults, and families — combining clinical precision with a calm, personal experience.
+    </p>
 
-<h2 id="contact-lens">Contact Lens</h2>
-<p>Contact lens evaluation, fitting, and long-term wear support.</p>
+<pre><code>&lt;div class=&quot;ev-hero-actions&quot;&gt;
+  &lt;a href=&quot;/contact/#appointment&quot; class=&quot;ev-cta ev-cta-primary&quot;&gt;Book Appointment&lt;/a&gt;
+  &lt;a href=&quot;/contact/#contact-form&quot; class=&quot;ev-cta ev-cta-secondary&quot;&gt;Contact Us&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+  </section>
 
-<h2 id="surgery-support">Surgery Support</h2>
-<p>Pre-op and post-op service coordination and patient guidance.</p>
+  <section class="ev-full-bleed ev-reveal">
+    <img src="/images/services-hero.jpg" alt="Eye care services at EnlightenVision Optometry">
+  </section>
+
+  <section class="ev-editorial-section ev-reveal" id="services-overview">
+    <div class="ev-section-grid">
+      <div class="ev-section-label">What We Offer</div>
+      <div class="ev-section-content">
+        <h2>Care that supports both clear vision and long-term eye health.</h2>
+        <p>
+          Our services are built around prevention, early detection, comfort, and customized treatment. Whether you need a routine exam, children’s vision care, contact lenses, refractive surgery co-management, or urgent attention, our goal is to help you see clearly and feel confident in your care.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ev-services-grid ev-reveal">
+    <article class="ev-service-card" id="myopia-management">
+      <p class="ev-service-kicker">01</p>
+      <h3>Myopia Management</h3>
+      <p>
+        Nearsightedness is increasingly common, especially in children and young adults. We offer personalized myopia management strategies designed to help slow progression and support healthier long-term vision.
+      </p>
+    </article>
+
+<pre><code>&lt;article class=&quot;ev-service-card&quot; id=&quot;comprehensive-eye-exams&quot;&gt;
+  &lt;p class=&quot;ev-service-kicker&quot;&gt;02&lt;/p&gt;
+  &lt;h3&gt;Comprehensive Eye Exams&lt;/h3&gt;
+  &lt;p&gt;
+    A complete eye exam evaluates both vision and eye health. We assess how well you see, review prescription needs, and carefully examine the internal and external structures of the eye for early signs of disease.
+  &lt;/p&gt;
+&lt;/article&gt;
+
+&lt;article class=&quot;ev-service-card&quot; id=&quot;pediatric-eyecare&quot;&gt;
+  &lt;p class=&quot;ev-service-kicker&quot;&gt;03&lt;/p&gt;
+  &lt;h3&gt;Pediatric Eyecare&lt;/h3&gt;
+  &lt;p&gt;
+    Children’s vision can change quickly as they grow. Regular pediatric eye exams help support visual development, classroom performance, comfort, and confidence during important years of learning.
+  &lt;/p&gt;
+&lt;/article&gt;
+
+&lt;article class=&quot;ev-service-card&quot; id=&quot;contact-lens-exam&quot;&gt;
+  &lt;p class=&quot;ev-service-kicker&quot;&gt;04&lt;/p&gt;
+  &lt;h3&gt;Contact Lens Exam&lt;/h3&gt;
+  &lt;p&gt;
+    Contact lenses should feel clear, comfortable, and appropriate for your lifestyle. We evaluate fit, prescription, eye surface health, and wearing habits to recommend the best option for daily life.
+  &lt;/p&gt;
+&lt;/article&gt;
+
+&lt;article class=&quot;ev-service-card&quot; id=&quot;pre-post-lasik&quot;&gt;
+  &lt;p class=&quot;ev-service-kicker&quot;&gt;05&lt;/p&gt;
+  &lt;h3&gt;Pre / Post LASIK Care&lt;/h3&gt;
+  &lt;p&gt;
+    If you are considering LASIK or recovering after treatment, we provide careful pre-operative evaluation and post-operative follow-up to help ensure clarity, safety, and continuity of care.
+  &lt;/p&gt;
+&lt;/article&gt;
+
+&lt;article class=&quot;ev-service-card&quot; id=&quot;urgent-care&quot;&gt;
+  &lt;p class=&quot;ev-service-kicker&quot;&gt;06&lt;/p&gt;
+  &lt;h3&gt;Urgent Eye Care&lt;/h3&gt;
+  &lt;p&gt;
+    Eye emergencies and urgent concerns may include redness, pain, scratches, foreign objects, sudden irritation, or injuries to the eye and eyelid. We provide prompt attention when vision and comfort cannot wait.
+  &lt;/p&gt;
+&lt;/article&gt;
+</code></pre>
+  </section>
+
+  <section class="ev-split-band ev-reveal">
+    <div class="ev-split-copy">
+      <p class="ev-band-kicker">A More Personal Approach</p>
+      <h2>Technology, judgment, and care working together.</h2>
+      <p>
+        We believe great eye care is not only about advanced testing — it is also about listening carefully, explaining clearly, and tailoring every recommendation to the way you study, work, drive, read, and live.
+      </p>
+    </div>
+    <div class="ev-split-image">
+      <img src="/images/eye-exam.jpg" alt="Comprehensive vision care at EnlightenVision Optometry">
+    </div>
+  </section>
+
+  <section class="ev-editorial-section ev-reveal" id="who-we-care-for">
+    <div class="ev-section-grid">
+      <div class="ev-section-label">Who We Care For</div>
+      <div class="ev-section-content">
+        <h2>Services for children, adults, and families.</h2>
+        <p>
+          From routine vision checks to more specialized care, we are committed to providing quality eye care for you and your family in an environment that feels calm, modern, and reassuring.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ev-cta-panel ev-reveal">
+    <p class="ev-cta-kicker">Start with clarity</p>
+    <h2>Find the service that fits your vision needs.</h2>
+    <p>
+      Whether you are scheduling a routine exam, exploring contact lenses, managing childhood myopia, or seeking urgent eye care, our team is here to help.
+    </p>
+    <div class="ev-hero-actions">
+      <a href="/contact/#appointment" class="ev-cta ev-cta-primary">Book Appointment</a>
+      <a href="/contact/" class="ev-cta ev-cta-secondary">Visit Contact Page</a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const items = document.querySelectorAll('.ev-reveal');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, {
+    threshold: 0.12
+  });
+
+  items.forEach((item) => observer.observe(item));
+});
+</script>
   </div>
 
   <div class="container post-prev-next" data-pagefind-ignore>
@@ -309,8 +518,6 @@
     <a class="prev"></a>
   </div>
 
-  
-    
   
 </article>
 
@@ -322,6 +529,7 @@
       
       <div class="group">
         <h2 class="title">Practice</h2>
+
         
         <a href="/" class="item">Home</a>
         
@@ -331,10 +539,13 @@
         
         <a href="/contact" class="item">Contact Us</a>
         
+
+        
       </div>
       
       <div class="group">
         <h2 class="title">Hours</h2>
+
         
         <a href="#" class="item"><span id="footer-open-status">Checking...</span></a>
         
@@ -342,40 +553,52 @@
         
         <a href="/contact" class="item">View full hours</a>
         
+
+        
       </div>
       
       <div class="group">
         <h2 class="title">Location & Legal</h2>
+
         
         <a target="_blank" rel="noopener" href="https://maps.app.goo.gl/y37nxg2EPqyrR5K46" class="item"><span class="footer-spacer">9551 1/4 Telegraph Rd, Pico Rivera</span></a>
         
-        <a href="/privacy" class="item">Privacy Policy</a>
+
+        
+          <div class="footer-meta-inline">
+            <span>
+              &copy; 2026 EVO • Jay Jiang
+              <span class="footer-meta-separator">•</span>
+              <a href="/privacy" class="footer-policy-link">Privacy Policy</a>
+            </span>
+
+            
+          </div>
         
       </div>
       
     </div>
-    <span>&copy; 2026 Jay Jiang<br>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></span>
+
     
-    
-      <br>
-      <div class="color-scheme-toggle" role="radiogroup" id="theme-color-scheme-toggle">
-        <label>
-          <input type="radio" value="light">
-          <span>Light</span>
-        </label>
-        <label>
-          <input type="radio" value="dark">
-          <span>Dark</span>
-        </label>
-        <label>
-          <input type="radio" value="auto">
-          <span>Auto</span>
-        </label>
+      <div class="footer-theme-toggle-wrap">
+        <div class="color-scheme-toggle" role="radiogroup" id="theme-color-scheme-toggle">
+          <label>
+            <input type="radio" value="light">
+            <span>Light</span>
+          </label>
+          <label>
+            <input type="radio" value="dark">
+            <span>Dark</span>
+          </label>
+          <label>
+            <input type="radio" value="auto">
+            <span>Auto</span>
+          </label>
+        </div>
       </div>
     
   </div>
 </footer>
-
 
     
 <script src="/js/main.js"></script>

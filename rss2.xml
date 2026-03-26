@@ -6,37 +6,34 @@
     <description>Advanced Optometry and Vision Care in Pico Rivera</description>
     <language>en</language>
     <copyright>All rights reserved 2026, Jay Jiang</copyright>
-    <lastBuildDate>Wed, 18 Mar 2026 20:07:11 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2026 03:15:01 GMT</lastBuildDate>
     <generator>Hexo</generator>
     <atom:link href="https://enlightenvision.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Post Two</title>
-      <link>https://enlightenvision.github.io/2026/03/18/Post-Two/</link>
-      <author>Jay Jiang</author>
-      <pubDate>Wed, 18 Mar 2026 20:07:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>Post Three</title>
-      <link>https://enlightenvision.github.io/2026/03/18/Post-Three/</link>
-      <author>Jay Jiang</author>
-      <pubDate>Wed, 18 Mar 2026 20:07:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>Post One</title>
-      <link>https://enlightenvision.github.io/2026/03/18/Post-One/</link>
-      <author>Jay Jiang</author>
-      <pubDate>Wed, 18 Mar 2026 20:07:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>Hello World</title>
-      <link>https://enlightenvision.github.io/2026/03/18/hello-world/</link>
+      <title>About Us</title>
+      <link>https://enlightenvision.github.io/2026/03/25/About%20EVO/</link>
       <description>
-        <![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for]]>
+        <![CDATA[<p>EnlightenVision Optometry is committed to thoughtful, personalized, and modern vision care.</p>
+<p><a href="/about/">Read more</a></p>]]>
       </description>
       <author>Jay Jiang</author>
-      <pubDate>Wed, 18 Mar 2026 19:45:39 GMT</pubDate>
+      <category domain="https://enlightenvision.github.io/categories/Announcement/">Announcement</category>
+      <pubDate>Wed, 25 Mar 2026 07:00:00 GMT</pubDate>
       <content:encoded>
-        <![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]>
+        <![CDATA[<p>EnlightenVision Optometry is committed to thoughtful, personalized, and modern vision care.</p><p><a href="/about/">Read more</a></p>]]>
+      </content:encoded>
+    </item>
+    <item>
+      <title>Services</title>
+      <link>https://enlightenvision.github.io/2026/03/25/Our%20Services/</link>
+      <description>
+        <![CDATA[<h2 id="Services"><a href="#Services" class="headerlink" title="Services"></a>Services</h2><p>At EnlightenVision Optometry, we are committed]]>
+      </description>
+      <author>Jay Jiang</author>
+      <category domain="https://enlightenvision.github.io/categories/Announcement/">Announcement</category>
+      <pubDate>Wed, 25 Mar 2026 07:00:00 GMT</pubDate>
+      <content:encoded>
+        <![CDATA[<h2 id="Services"><a href="#Services" class="headerlink" title="Services"></a>Services</h2><p>At EnlightenVision Optometry, we are committed to providing quality eye care for you and your family.</p><h3 id="Myopia-Management"><a href="#Myopia-Management" class="headerlink" title="Myopia Management"></a>Myopia Management</h3><p>Myopia is increasingly common, especially among children and young adults. We provide personalized strategies to help manage progression and support healthier long-term vision.</p><h3 id="Comprehensive-Eye-Exams"><a href="#Comprehensive-Eye-Exams" class="headerlink" title="Comprehensive Eye Exams"></a>Comprehensive Eye Exams</h3><p>Our comprehensive eye exams evaluate both your vision and your eye health. We examine the eyes inside and out, check prescription needs, and look for early signs of disease.</p><h3 id="Pediatric-Eyecare"><a href="#Pediatric-Eyecare" class="headerlink" title="Pediatric Eyecare"></a>Pediatric Eyecare</h3><p>Children’s eyes can change quickly as they grow. Regular pediatric eye exams help support healthy development, learning, and long-term visual comfort.</p><h3 id="Contact-Lens-Exam"><a href="#Contact-Lens-Exam" class="headerlink" title="Contact Lens Exam"></a>Contact Lens Exam</h3><p>A contact lens exam helps determine the best lens fit, prescription, and wearing plan for your lifestyle, comfort, and eye health.</p><h3 id="Pre-Post-LASIK-Care"><a href="#Pre-Post-LASIK-Care" class="headerlink" title="Pre &#x2F; Post LASIK Care"></a>Pre &#x2F; Post LASIK Care</h3><p>We provide pre-operative evaluations and post-operative follow-up for LASIK patients, helping ensure clarity, safety, and continuity of care.</p><h3 id="Urgent-Eye-Care"><a href="#Urgent-Eye-Care" class="headerlink" title="Urgent Eye Care"></a>Urgent Eye Care</h3><p>If you are experiencing redness, pain, irritation, scratches, foreign objects, or other eye emergencies, we provide prompt care when you need it most.</p><h3 id="Book-an-Appointment"><a href="#Book-an-Appointment" class="headerlink" title="Book an Appointment"></a>Book an Appointment</h3><p>Whether you need a routine eye exam, specialized care, or urgent attention, our team is here to help you see clearly and comfortably.</p>]]>
       </content:encoded>
     </item>
   </channel>

@@ -14,16 +14,7 @@ body {
     linear-gradient(180deg, #f8fbff 0%, #f5f7fb 100%);
 }
 
-body {
-  margin: 0;
-  padding-top: 76px;
-  background:
-    radial-gradient(circle at top left, rgba(219, 234, 254, 0.45), transparent 38%),
-    radial-gradient(circle at top right, rgba(224, 242, 254, 0.40), transparent 32%),
-    linear-gradient(180deg, #f8fbff 0%, #f5f7fb 100%);
-}
-
-/* 手动 Light：永远浅色 */
+/* Manual light: always light */
 html[data-theme="light"] body,
 body[data-theme="light"] {
   background:
@@ -32,7 +23,7 @@ body[data-theme="light"] {
     linear-gradient(180deg, #f8fbff 0%, #f5f7fb 100%);
 }
 
-/* 手动 Dark：永远深色 */
+/* Manual dark: always dark */
 html.dark body,
 body.dark,
 html[data-theme="dark"] body,
@@ -45,7 +36,7 @@ body[data-color-scheme="dark"] {
     linear-gradient(180deg, #111827 0%, #0f172a 100%);
 }
 
-/* Auto：只在系统深色时变深 */
+/* Auto: follow system dark only when not manually forced */
 @media (prefers-color-scheme: dark) {
   html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) body,
   html[data-theme="auto"] body,
@@ -55,18 +46,6 @@ body[data-color-scheme="dark"] {
       radial-gradient(circle at top right, rgba(14, 116, 144, 0.16), transparent 35%),
       linear-gradient(180deg, #111827 0%, #0f172a 100%);
   }
-}
-
-html.dark body,
-body.dark,
-html[data-theme="dark"] body,
-body[data-theme="dark"],
-html[data-color-scheme="dark"] body,
-body[data-color-scheme="dark"] {
-  background:
-    radial-gradient(circle at top left, rgba(30, 64, 175, 0.18), transparent 40%),
-    radial-gradient(circle at top right, rgba(14, 116, 144, 0.16), transparent 35%),
-    linear-gradient(180deg, #111827 0%, #0f172a 100%);
 }
 
 main,
@@ -514,42 +493,6 @@ section.hero {
   box-shadow: 0 14px 34px rgba(42, 81, 124, 0.08);
 }
 
-@media (prefers-color-scheme: dark) {
-  .ev-contact-panel,
-  .ev-form-card,
-  .card,
-  .post-list .item {
-    background: #111827;
-    border: 1px solid rgba(148, 163, 184, 0.1);
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
-  }
-}
-
-html.dark .ev-contact-panel,
-html.dark .ev-form-card,
-html.dark .card,
-html.dark .post-list .item,
-body.dark .ev-contact-panel,
-body.dark .ev-form-card,
-body.dark .card,
-body.dark .post-list .item,
-html[data-theme="dark"] .ev-contact-panel,
-html[data-theme="dark"] .ev-form-card,
-html[data-theme="dark"] .card,
-html[data-theme="dark"] .post-list .item,
-body[data-theme="dark"] .ev-contact-panel,
-body[data-theme="dark"] .ev-form-card,
-body[data-theme="dark"] .card,
-body[data-theme="dark"] .post-list .item,
-html[data-color-scheme="dark"] .ev-contact-panel,
-html[data-color-scheme="dark"] .ev-form-card,
-html[data-color-scheme="dark"] .card,
-html[data-color-scheme="dark"] .post-list .item {
-  background: #111827;
-  border: 1px solid rgba(148, 163, 184, 0.1);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
-}
-
 .ev-contact-kicker,
 .ev-contact-section-label {
   margin: 0 0 10px;
@@ -582,34 +525,6 @@ html[data-color-scheme="dark"] .post-list .item {
   margin: 0 0 12px;
   font-size: 38px;
   line-height: 1.1;
-}
-
-@media (prefers-color-scheme: dark) {
-  .ev-contact-kicker,
-  .ev-contact-lead,
-  .ev-contact-section-label,
-  .ev-form-intro {
-    color: #94a3b8;
-  }
-}
-
-html.dark .ev-contact-kicker,
-html.dark .ev-contact-lead,
-html.dark .ev-contact-section-label,
-html.dark .ev-form-intro,
-body.dark .ev-contact-kicker,
-body.dark .ev-contact-lead,
-body.dark .ev-contact-section-label,
-body.dark .ev-form-intro,
-html[data-theme="dark"] .ev-contact-kicker,
-html[data-theme="dark"] .ev-contact-lead,
-html[data-theme="dark"] .ev-contact-section-label,
-html[data-theme="dark"] .ev-form-intro,
-html[data-color-scheme="dark"] .ev-contact-kicker,
-html[data-color-scheme="dark"] .ev-contact-lead,
-html[data-color-scheme="dark"] .ev-contact-section-label,
-html[data-color-scheme="dark"] .ev-form-intro {
-  color: #94a3b8;
 }
 
 /* =========================================================
@@ -652,25 +567,84 @@ html[data-color-scheme="dark"] .ev-form-intro {
   color: #1d1d1f;
 }
 
+/* Auto + system dark */
 @media (prefers-color-scheme: dark) {
-  .ev-contact-info-card {
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-contact-panel,
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-form-card,
+  html[data-theme="auto"] .ev-contact-panel,
+  html[data-theme="auto"] .ev-form-card {
     background: #111827;
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+  }
+
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-contact-info-card,
+  html[data-theme="auto"] .ev-contact-info-card {
+    background: #0f172a;
     border: 1px solid rgba(148, 163, 184, 0.12);
     box-shadow: none;
   }
 
-  .ev-contact-info-card strong {
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-contact-kicker,
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-contact-lead,
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-contact-section-label,
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-form-intro,
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-contact-info-card strong,
+  html[data-theme="auto"] .ev-contact-kicker,
+  html[data-theme="auto"] .ev-contact-lead,
+  html[data-theme="auto"] .ev-contact-section-label,
+  html[data-theme="auto"] .ev-form-intro,
+  html[data-theme="auto"] .ev-contact-info-card strong {
     color: #94a3b8;
   }
 
-  .ev-contact-info-card span,
-  .ev-contact-info-card p {
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-contact-panel,
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-form-card,
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-contact-panel h1,
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-form-card h2,
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-contact-panel p,
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-form-card p,
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-contact-info-card span,
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-contact-info-card p,
+  html[data-theme="auto"] .ev-contact-panel,
+  html[data-theme="auto"] .ev-form-card,
+  html[data-theme="auto"] .ev-contact-panel h1,
+  html[data-theme="auto"] .ev-form-card h2,
+  html[data-theme="auto"] .ev-contact-panel p,
+  html[data-theme="auto"] .ev-form-card p,
+  html[data-theme="auto"] .ev-contact-info-card span,
+  html[data-theme="auto"] .ev-contact-info-card p {
     color: #e5e7eb;
   }
 
-  .ev-contact-info-card a {
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-contact-info-card a,
+  html[data-theme="auto"] .ev-contact-info-card a {
     color: #60a5fa;
   }
+}
+
+/* Manual dark */
+html.dark .ev-contact-panel,
+html.dark .ev-form-card,
+html.dark .ev-contact-info-card,
+body.dark .ev-contact-panel,
+body.dark .ev-form-card,
+body.dark .ev-contact-info-card,
+html[data-theme="dark"] .ev-contact-panel,
+html[data-theme="dark"] .ev-form-card,
+html[data-theme="dark"] .ev-contact-info-card,
+body[data-theme="dark"] .ev-contact-panel,
+body[data-theme="dark"] .ev-form-card,
+body[data-theme="dark"] .ev-contact-info-card,
+html[data-color-scheme="dark"] .ev-contact-panel,
+html[data-color-scheme="dark"] .ev-form-card,
+html[data-color-scheme="dark"] .ev-contact-info-card,
+body[data-color-scheme="dark"] .ev-contact-panel,
+body[data-color-scheme="dark"] .ev-form-card,
+body[data-color-scheme="dark"] .ev-contact-info-card {
+  background: #111827 !important;
+  border: 1px solid rgba(148, 163, 184, 0.12) !important;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45) !important;
 }
 
 html.dark .ev-contact-info-card,
@@ -679,36 +653,73 @@ html[data-theme="dark"] .ev-contact-info-card,
 body[data-theme="dark"] .ev-contact-info-card,
 html[data-color-scheme="dark"] .ev-contact-info-card,
 body[data-color-scheme="dark"] .ev-contact-info-card {
-  background: #111827;
-  border: 1px solid rgba(148, 163, 184, 0.12);
-  box-shadow: none;
+  background: #0f172a !important;
+  box-shadow: none !important;
 }
 
+html.dark .ev-contact-kicker,
+html.dark .ev-contact-lead,
+html.dark .ev-contact-section-label,
+html.dark .ev-form-intro,
 html.dark .ev-contact-info-card strong,
+body.dark .ev-contact-kicker,
+body.dark .ev-contact-lead,
+body.dark .ev-contact-section-label,
+body.dark .ev-form-intro,
 body.dark .ev-contact-info-card strong,
+html[data-theme="dark"] .ev-contact-kicker,
+html[data-theme="dark"] .ev-contact-lead,
+html[data-theme="dark"] .ev-contact-section-label,
+html[data-theme="dark"] .ev-form-intro,
 html[data-theme="dark"] .ev-contact-info-card strong,
-body[data-theme="dark"] .ev-contact-info-card strong,
-html[data-color-scheme="dark"] .ev-contact-info-card strong,
-body[data-color-scheme="dark"] .ev-contact-info-card strong {
-  color: #94a3b8;
+html[data-color-scheme="dark"] .ev-contact-kicker,
+html[data-color-scheme="dark"] .ev-contact-lead,
+html[data-color-scheme="dark"] .ev-contact-section-label,
+html[data-color-scheme="dark"] .ev-form-intro,
+html[data-color-scheme="dark"] .ev-contact-info-card strong {
+  color: #94a3b8 !important;
 }
 
+html.dark .ev-contact-panel,
+html.dark .ev-form-card,
+html.dark .ev-contact-panel h1,
+html.dark .ev-form-card h2,
+html.dark .ev-contact-panel p,
+html.dark .ev-form-card p,
 html.dark .ev-contact-info-card span,
 html.dark .ev-contact-info-card p,
+body.dark .ev-contact-panel,
+body.dark .ev-form-card,
+body.dark .ev-contact-panel h1,
+body.dark .ev-form-card h2,
+body.dark .ev-contact-panel p,
+body.dark .ev-form-card p,
 body.dark .ev-contact-info-card span,
 body.dark .ev-contact-info-card p,
+html[data-theme="dark"] .ev-contact-panel,
+html[data-theme="dark"] .ev-form-card,
+html[data-theme="dark"] .ev-contact-panel h1,
+html[data-theme="dark"] .ev-form-card h2,
+html[data-theme="dark"] .ev-contact-panel p,
+html[data-theme="dark"] .ev-form-card p,
 html[data-theme="dark"] .ev-contact-info-card span,
 html[data-theme="dark"] .ev-contact-info-card p,
+html[data-color-scheme="dark"] .ev-contact-panel,
+html[data-color-scheme="dark"] .ev-form-card,
+html[data-color-scheme="dark"] .ev-contact-panel h1,
+html[data-color-scheme="dark"] .ev-form-card h2,
+html[data-color-scheme="dark"] .ev-contact-panel p,
+html[data-color-scheme="dark"] .ev-form-card p,
 html[data-color-scheme="dark"] .ev-contact-info-card span,
 html[data-color-scheme="dark"] .ev-contact-info-card p {
-  color: #e5e7eb;
+  color: #e5e7eb !important;
 }
 
 html.dark .ev-contact-info-card a,
 body.dark .ev-contact-info-card a,
 html[data-theme="dark"] .ev-contact-info-card a,
 html[data-color-scheme="dark"] .ev-contact-info-card a {
-  color: #60a5fa;
+  color: #60a5fa !important;
 }
 
 /* =========================================================
@@ -1833,10 +1844,8 @@ body.dark .ev-service-card p {
 }
 
 /* =========================================================
-   HOME HERO BLUR EXIT EFFECT
-   首页 Hero 滚动高斯模糊消失效果
+   HOME HERO BLUR
    ========================================================= */
-
 .ev-home-hero {
   transform-origin: center top;
   will-change: transform, opacity, filter;
@@ -1844,21 +1853,6 @@ body.dark .ev-service-card p {
 
 .ev-home-hero .title,
 .ev-home-hero .description {
-  will-change: transform, opacity, filter;
-}
-
-/* 给动画更丝滑一点 */
-.ev-home-hero,
-.ev-home-hero .title,
-.ev-home-hero .description {
-  transition: transform 0.08s linear, opacity 0.08s linear, filter 0.08s linear;
-}
-
-/* =========================================================
-   HERO BLUR SMOOTH
-   ========================================================= */
-.ev-home-hero {
-  transform-origin: center top;
   will-change: transform, opacity, filter;
 }
 
@@ -1867,4 +1861,3 @@ body.dark .ev-service-card p {
 .ev-home-hero .description {
   transition: transform 0.18s ease-out, opacity 0.18s ease-out, filter 0.18s ease-out;
 }
-

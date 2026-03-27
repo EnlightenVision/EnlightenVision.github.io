@@ -151,6 +151,18 @@ body[data-color-scheme="dark"] #theme-nav {
   z-index: 998;
 }
 
+/* 鼠标从主菜单移动到下拉菜单时的“缓冲带” */
+.ev-has-dropdown::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 24px;
+  background: transparent;
+}
+
 .ev-has-dropdown:hover::before,
 .ev-has-dropdown:focus-within::before {
   opacity: 1;
@@ -159,9 +171,9 @@ body[data-color-scheme="dark"] #theme-nav {
 /* dropdown shell */
 .ev-dropdown {
   position: absolute;
-  top: calc(100% + 16px);
+  top: calc(100% + 8px);
   left: 50%;
-  transform: translateX(-50%) translateY(10px) scale(0.985);
+  transform: translateX(-50%) translateY(6px) scale(0.985);
   transform-origin: top center;
   min-width: 320px;
   max-width: 360px;
@@ -414,6 +426,19 @@ html[data-color-scheme="dark"] .ev-dropdown-link[aria-current="page"],
 body[data-color-scheme="dark"] .ev-dropdown-link[aria-current="page"] {
   background: rgba(96, 165, 250, 0.12);
   box-shadow: inset 0 0 0 1px rgba(96, 165, 250, 0.16);
+}
+
+.ev-has-dropdown {
+  position: relative;
+}
+
+.ev-has-dropdown:hover .ev-dropdown,
+.ev-has-dropdown:focus-within .ev-dropdown,
+.ev-dropdown:hover {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0) scale(1);
 }
 
 /* =========================================================
@@ -2134,4 +2159,32 @@ body.dark .ev-service-card p {
 @keyframes evTypingBlink {
   0%, 50% { opacity: 1; }
   50.01%, 100% { opacity: 0; }
+}
+
+
+/* =========================================================
+   HOME HERO — BALANCED (FINAL)
+   ========================================================= */
+.ev-home-hero {
+  min-height: auto !important;
+
+  padding-top: 72px !important;    /* 上面稍微收一点 */
+  padding-bottom: 96px !important; /* 下面稍微多一点 */
+
+  display: block; /* 不再用 flex 居中，避免拉太大 */
+}
+
+.ev-home-hero .title {
+  margin-bottom: 10px !important;
+}
+
+.ev-home-hero .description {
+  margin-bottom: 0 !important;
+}
+
+/* 首页 News 区块往上提一点 */
+.home .section-title,
+.index .section-title,
+body .section-title {
+  margin-top: 8px;
 }

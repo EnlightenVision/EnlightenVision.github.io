@@ -1,10 +1,10 @@
 https://enlightenvision.github.io/services/index.html
+https://enlightenvision.github.io/privacy/index.html
 https://enlightenvision.github.io/2026/03/25/Our%20Services/
 https://enlightenvision.github.io/search/index.html
 https://enlightenvision.github.io/about/index.html
 https://enlightenvision.github.io/contact/index.html
 https://enlightenvision.github.io/2026/03/25/About%20EVO/
-https://enlightenvision.github.io/privacy/index.html
 https://enlightenvision.github.io/categories/index.html
 https://enlightenvision.github.io/tags/index.html
 https://enlightenvision.github.io/

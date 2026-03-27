@@ -166,18 +166,49 @@
 
       const title = hero.querySelector('.title');
       const desc = hero.querySelector('.description');
+      const typingEl = hero.querySelector('.ev-typing');
 
+      /* 主标题轻微淡入 */
+      if (title) {
+        title.style.opacity = '0';
+        title.style.transform = 'translateY(8px)';
+
+        setTimeout(() => {
+          title.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+          title.style.opacity = '1';
+          title.style.transform = 'translateY(0)';
+        }, 100);
+      }
+
+      /* 副标题打字 */
+      if (typingEl) {
+        const fullText = typingEl.getAttribute('data-text') || '';
+        typingEl.textContent = '';
+
+        let index = 0;
+        const speed = 55;
+
+        function typeNextChar() {
+          if (index < fullText.length) {
+            typingEl.textContent += fullText.charAt(index);
+            index++;
+            setTimeout(typeNextChar, speed);
+          } else {
+            typingEl.classList.add('is-typed');
+          }
+        }
+
+        setTimeout(typeNextChar, 350);
+      }
+
+      /* 首页 hero 滚动模糊/淡出/缩小 */
       function updateHeroEffect() {
         const y = window.scrollY || window.pageYOffset || 0;
-
-        /* 数值越大，效果越慢、越柔和 */
         const maxScroll = 300;
 
-        /* Apple 风 easing */
         const raw = Math.min(y / maxScroll, 1);
         const progress = 1 - Math.pow(1 - raw, 2);
 
-        /* 整体 hero 的缩小 / 淡出 / 模糊 */
         const heroScale = 1 - progress * 0.12;
         const heroOpacity = 1 - progress * 0.95;
         const heroBlur = progress * 18;
@@ -186,7 +217,6 @@
         hero.style.opacity = String(heroOpacity);
         hero.style.filter = `blur(${heroBlur}px)`;
 
-        /* 标题和副标题做微弱位移，让层次更自然 */
         if (title) {
           title.style.transform = `translateY(${progress * -10}px)`;
         }

@@ -1861,3 +1861,43 @@ body.dark .ev-service-card p {
 .ev-home-hero .description {
   transition: transform 0.18s ease-out, opacity 0.18s ease-out, filter 0.18s ease-out;
 }
+
+/* =========================================================
+   HERO ANIMATION (FINAL)
+   ========================================================= */
+
+/* typing */
+.ev-typing {
+  position: relative;
+  display: inline-block;
+  min-width: 22ch;   /* 预留整句宽度，防止横向抖动 */
+  min-height: 1.25em; /* 预留一行高度，防止把 News 顶下去 */
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.ev-typing::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  bottom: 0.08em;
+  width: 2px;
+  height: 0.95em;
+  background: currentColor;
+  animation: evTypingBlink 0.9s step-end infinite;
+}
+
+.ev-typing.is-typed::after {
+  animation: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+@keyframes evTypingBlink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+.ev-home-hero {
+  min-height: 50px;
+}

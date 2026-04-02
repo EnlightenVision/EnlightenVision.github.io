@@ -2763,3 +2763,548 @@ html[data-color-scheme="dark"] .ev-hours-status.closed {
     max-width: 100% !important;
   }
 }
+
+/* =========================================================
+   BRAND SYSTEM — SHARED
+   ========================================================= */
+:root {
+  --ev-shell-max: 1180px;
+  --ev-content-max: 760px;
+  --ev-radius-xl: 28px;
+  --ev-radius-lg: 22px;
+  --ev-border-light: rgba(15, 23, 42, 0.06);
+  --ev-border-dark: rgba(148, 163, 184, 0.12);
+  --ev-shadow-light: 0 16px 36px rgba(15, 23, 42, 0.07);
+  --ev-shadow-dark: 0 18px 42px rgba(0, 0, 0, 0.34);
+  --ev-panel-light: rgba(255, 255, 255, 0.74);
+  --ev-panel-dark: rgba(17, 24, 39, 0.72);
+  --ev-muted-light: #6b7280;
+  --ev-muted-dark: #94a3b8;
+}
+
+.ev-apple-page,
+.ev-applehxs-page {
+  padding-top: 8px;
+}
+
+.ev-editorial-section,
+.ev-split-band,
+.ev-contact-layout,
+.ev-services-grid,
+.ev-cta-panel {
+  max-width: var(--ev-shell-max);
+}
+
+.ev-section-content h2,
+.ev-split-copy h2,
+.ev-cta-panel h2,
+.ev-form-card h2,
+.ev-contact-panel h1,
+.ev-service-card h3 {
+  letter-spacing: -0.045em;
+}
+
+.ev-panel,
+.ev-service-card,
+.ev-contact-panel,
+.ev-form-card,
+.ev-faq-item,
+.ev-doctor-card {
+  background: var(--ev-panel-light);
+  border: 1px solid var(--ev-border-light);
+  box-shadow: var(--ev-shadow-light);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--ev-radius-xl);
+}
+
+@media (prefers-color-scheme: dark) {
+  .ev-panel,
+  .ev-service-card,
+  .ev-contact-panel,
+  .ev-form-card,
+  .ev-faq-item,
+  .ev-doctor-card {
+    background: var(--ev-panel-dark);
+    border-color: var(--ev-border-dark);
+    box-shadow: var(--ev-shadow-dark);
+  }
+}
+
+html.dark .ev-panel,
+html.dark .ev-service-card,
+html.dark .ev-contact-panel,
+html.dark .ev-form-card,
+html.dark .ev-faq-item,
+html.dark .ev-doctor-card,
+html[data-theme="dark"] .ev-panel,
+html[data-color-scheme="dark"] .ev-panel,
+html[data-theme="dark"] .ev-service-card,
+html[data-color-scheme="dark"] .ev-service-card,
+html[data-theme="dark"] .ev-contact-panel,
+html[data-color-scheme="dark"] .ev-contact-panel,
+html[data-theme="dark"] .ev-form-card,
+html[data-color-scheme="dark"] .ev-form-card,
+html[data-theme="dark"] .ev-faq-item,
+html[data-color-scheme="dark"] .ev-faq-item,
+html[data-theme="dark"] .ev-doctor-card,
+html[data-color-scheme="dark"] .ev-doctor-card {
+  background: var(--ev-panel-dark);
+  border-color: var(--ev-border-dark);
+  box-shadow: var(--ev-shadow-dark);
+}
+
+/* =========================================================
+   APPLE-LIKE SUBTLE REVEAL
+   ========================================================= */
+.ev-reveal {
+  opacity: 0;
+  transform: translateY(24px) scale(0.985);
+  filter: blur(8px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform, filter;
+}
+
+.ev-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+.ev-reveal-delay-1 { transition-delay: 0.06s; }
+.ev-reveal-delay-2 { transition-delay: 0.12s; }
+.ev-reveal-delay-3 { transition-delay: 0.18s; }
+
+/* =========================================================
+   ABOUT PAGE — POLISH
+   ========================================================= */
+.ev-about-page .ev-about-hero {
+  padding-top: 18px !important;
+  padding-bottom: 24px !important;
+  margin-top: -6px;
+}
+
+.ev-about-page .ev-about-hero-title {
+  max-width: none !important;
+  font-size: clamp(2.5rem, 4.4vw, 4.5rem) !important;
+  line-height: 1.01 !important;
+  letter-spacing: -0.05em;
+}
+
+.ev-about-page .ev-about-hero-lead {
+  max-width: 24em !important;
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem) !important;
+  line-height: 1.68 !important;
+}
+
+.ev-about-page .ev-full-bleed {
+  width: min(1080px, calc(100vw - 64px)) !important;
+  margin: 8px auto 40px !important;
+}
+
+.ev-about-page .ev-full-bleed img {
+  height: 320px !important;
+  border-radius: 24px !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.ev-about-page .ev-editorial-section {
+  padding-top: 32px !important;
+  padding-bottom: 32px !important;
+}
+
+.ev-about-page .ev-split-band {
+  padding-top: 42px !important;
+  padding-bottom: 42px !important;
+}
+
+.ev-about-page .ev-section-content h2,
+.ev-about-page .ev-split-copy h2,
+.ev-about-page .ev-cta-panel h2 {
+  max-width: 15ch !important;
+  font-size: clamp(2rem, 3.5vw, 3rem) !important;
+  line-height: 1.05 !important;
+}
+
+.ev-about-page .ev-feature-list {
+  margin-top: 1em !important;
+}
+
+.ev-about-page .ev-feature-list li {
+  margin-bottom: 0.42em !important;
+  line-height: 1.65 !important;
+}
+
+.ev-about-page .ev-cta-panel {
+  margin-top: 8px !important;
+  padding: 36px 24px !important;
+}
+
+/* doctor card */
+.ev-doctor-card {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  padding: 24px;
+  margin-top: 18px;
+}
+
+.ev-doctor-photo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ev-doctor-photo {
+  width: 160px;
+  height: 160px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 24px;
+  display: block;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
+}
+
+.ev-doctor-meta {
+  display: grid;
+  gap: 10px;
+}
+
+.ev-doctor-name {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+
+.ev-doctor-credentials {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ev-muted-light);
+}
+
+.ev-doctor-bio {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #374151;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ev-doctor-credentials {
+    color: var(--ev-muted-dark);
+  }
+
+  .ev-doctor-bio {
+    color: #d1d5db;
+  }
+
+  .ev-doctor-photo {
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+  }
+}
+
+html.dark .ev-doctor-credentials,
+html[data-theme="dark"] .ev-doctor-credentials,
+html[data-color-scheme="dark"] .ev-doctor-credentials {
+  color: var(--ev-muted-dark);
+}
+
+html.dark .ev-doctor-bio,
+html[data-theme="dark"] .ev-doctor-bio,
+html[data-color-scheme="dark"] .ev-doctor-bio {
+  color: #d1d5db;
+}
+
+/* services / appointment tighter alignment */
+.ev-services-grid {
+  padding-top: 12px !important;
+  padding-bottom: 34px !important;
+}
+
+.ev-service-card {
+  border-radius: var(--ev-radius-lg);
+}
+
+.ev-appointment-page .ev-editorial-section:first-child,
+.ev-contact-page .ev-editorial-section:first-child {
+  padding-top: 10px !important;
+  padding-bottom: 18px !important;
+}
+
+.ev-appointment-side-title {
+  font-size: 28px !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.035em;
+}
+
+.ev-appointment-form-card textarea,
+#contact-form textarea {
+  min-height: 132px !important;
+}
+
+@media (max-width: 900px) {
+  .ev-about-page .ev-about-hero {
+    padding-top: 10px !important;
+    padding-bottom: 18px !important;
+    margin-top: 0;
+  }
+
+  .ev-about-page .ev-full-bleed {
+    width: calc(100vw - 24px) !important;
+    margin: 6px auto 26px !important;
+  }
+
+  .ev-about-page .ev-full-bleed img {
+    height: 240px !important;
+  }
+
+  .ev-about-page .ev-section-content h2,
+  .ev-about-page .ev-split-copy h2,
+  .ev-about-page .ev-cta-panel h2,
+  .ev-about-page .ev-about-hero-title {
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+
+  .ev-doctor-card {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    text-align: left;
+  }
+
+  .ev-doctor-photo {
+    width: 132px;
+    height: 132px;
+  }
+}
+
+/* =========================================================
+   ABOUT PAGE — NARROWER + CLEANER FINAL
+   ========================================================= */
+
+/* overall width narrower */
+.ev-about-page .ev-about-hero,
+.ev-about-page .ev-editorial-section,
+.ev-about-page .ev-split-band,
+.ev-about-page .ev-cta-panel {
+  max-width: 1040px !important;
+}
+
+/* hero tighter */
+.ev-about-page .ev-about-hero {
+  padding-top: 14px !important;
+  padding-bottom: 22px !important;
+  margin-top: -4px;
+}
+
+/* hero title */
+.ev-about-page .ev-about-hero-title {
+  max-width: none !important;
+  font-size: clamp(2.35rem, 4vw, 4.1rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.05em;
+}
+
+/* keep hero lead in one line on desktop */
+.ev-about-page .ev-about-hero-lead {
+  max-width: none !important;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: clamp(1rem, 1.5vw, 1.22rem) !important;
+  line-height: 1.55 !important;
+  white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .ev-about-page .ev-about-hero-lead {
+    white-space: normal;
+    max-width: 26em !important;
+  }
+}
+
+/* first image narrower and aligned with content */
+.ev-about-page .ev-full-bleed {
+  width: min(1040px, calc(100vw - 96px)) !important;
+  margin: 8px auto 34px !important;
+}
+
+.ev-about-page .ev-full-bleed img {
+  height: 300px !important;
+  border-radius: 24px !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* sections tighter */
+.ev-about-page .ev-editorial-section {
+  padding-top: 28px !important;
+  padding-bottom: 28px !important;
+}
+
+.ev-about-page .ev-split-band {
+  padding-top: 34px !important;
+  padding-bottom: 34px !important;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 400px) !important;
+  gap: 28px !important;
+}
+
+/* headings less wide / more controlled */
+.ev-about-page .ev-section-content h2,
+.ev-about-page .ev-split-copy h2 {
+  max-width: 13ch !important;
+  font-size: clamp(1.9rem, 3.1vw, 2.7rem) !important;
+  line-height: 1.06 !important;
+  letter-spacing: -0.045em;
+}
+
+/* specific long heading a bit wider */
+.ev-about-page .ev-editorial-section:nth-of-type(4) .ev-section-content h2 {
+  max-width: 16ch !important;
+}
+
+/* practice sub-blocks */
+.ev-about-subblock + .ev-about-subblock {
+  margin-top: 18px;
+}
+
+.ev-about-subtitle {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ev-about-subtitle {
+    color: #94a3b8;
+  }
+}
+
+html.dark .ev-about-subtitle,
+html[data-theme="dark"] .ev-about-subtitle,
+html[data-color-scheme="dark"] .ev-about-subtitle {
+  color: #94a3b8;
+}
+
+/* doctor card more aligned */
+.ev-about-page .ev-doctor-card {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+  padding: 28px;
+  margin-top: 18px;
+}
+
+.ev-about-page .ev-doctor-photo-wrap {
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+.ev-about-page .ev-doctor-photo {
+  width: 150px;
+  height: 100%;
+  min-height: 190px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 22px;
+  display: block;
+}
+
+.ev-about-page .ev-doctor-meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.ev-about-page .ev-doctor-name {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.05;
+}
+
+.ev-about-page .ev-doctor-credentials {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ev-about-page .ev-doctor-bio {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* CTA panel narrower like article content */
+.ev-about-page .ev-cta-panel {
+  max-width: 1040px !important;
+  margin-top: 10px !important;
+  padding: 30px 28px !important;
+}
+
+.ev-about-page .ev-cta-panel h2 {
+  max-width: 11ch !important;
+  font-size: clamp(2rem, 3.2vw, 2.9rem) !important;
+  line-height: 1.05 !important;
+}
+
+/* mobile */
+@media (max-width: 900px) {
+  .ev-about-page .ev-about-hero,
+  .ev-about-page .ev-editorial-section,
+  .ev-about-page .ev-split-band,
+  .ev-about-page .ev-cta-panel {
+    max-width: none !important;
+  }
+
+  .ev-about-page .ev-full-bleed {
+    width: calc(100vw - 24px) !important;
+    margin: 6px auto 24px !important;
+  }
+
+  .ev-about-page .ev-full-bleed img {
+    height: 230px !important;
+  }
+
+  .ev-about-page .ev-about-hero-lead {
+    white-space: normal;
+    max-width: 24em !important;
+  }
+
+  .ev-about-page .ev-split-band {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ev-about-page .ev-doctor-card {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 22px;
+  }
+
+  .ev-about-page .ev-doctor-photo {
+    width: 132px;
+    min-height: 132px;
+    height: 132px;
+  }
+
+  .ev-about-page .ev-section-content h2,
+  .ev-about-page .ev-split-copy h2,
+  .ev-about-page .ev-cta-panel h2 {
+    max-width: 100% !important;
+  }
+}

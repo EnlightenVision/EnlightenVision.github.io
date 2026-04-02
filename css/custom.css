@@ -2188,3 +2188,578 @@ body.dark .ev-service-card p {
 body .section-title {
   margin-top: 8px;
 }
+
+/* =========================================================
+   APPOINTMENT FAQ
+   ========================================================= */
+.ev-faq-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 8px;
+}
+
+.ev-faq-item {
+  padding: 20px 22px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+}
+
+.ev-faq-item h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.ev-faq-item p {
+  margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ev-faq-item {
+    background: rgba(17, 24, 39, 0.72);
+    border-color: rgba(148, 163, 184, 0.12);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+  }
+}
+
+html.dark .ev-faq-item,
+body.dark .ev-faq-item,
+html[data-theme="dark"] .ev-faq-item,
+html[data-color-scheme="dark"] .ev-faq-item {
+  background: rgba(17, 24, 39, 0.72);
+  border-color: rgba(148, 163, 184, 0.12);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================================================
+   CTA UPGRADE — NAV APPOINTMENT BUTTON
+   ========================================================= */
+.ev-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 16px;
+  margin-left: 8px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #ffffff !important;
+  background: linear-gradient(180deg, #1d8fff 0%, #0071e3 100%);
+  box-shadow:
+    0 8px 20px rgba(0, 113, 227, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    filter 0.18s ease,
+    background 0.18s ease;
+}
+
+.ev-nav-cta:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 12px 28px rgba(0, 113, 227, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
+  filter: saturate(1.05) brightness(1.02);
+}
+
+.ev-nav-cta:active {
+  transform: translateY(0);
+  box-shadow:
+    0 6px 14px rgba(0, 113, 227, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.ev-nav-cta:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(59, 130, 246, 0.18),
+    0 8px 20px rgba(0, 113, 227, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+/* dark mode */
+@media (prefers-color-scheme: dark) {
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-nav-cta,
+  html[data-theme="auto"] .ev-nav-cta {
+    background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
+    box-shadow:
+      0 10px 24px rgba(37, 99, 235, 0.28),
+      inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  }
+}
+
+html.dark .ev-nav-cta,
+body.dark .ev-nav-cta,
+html[data-theme="dark"] .ev-nav-cta,
+body[data-theme="dark"] .ev-nav-cta,
+html[data-color-scheme="dark"] .ev-nav-cta,
+body[data-color-scheme="dark"] .ev-nav-cta {
+  background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
+  box-shadow:
+    0 10px 24px rgba(37, 99, 235, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+/* =========================================================
+   CTA UPGRADE — MOBILE STICKY APPOINTMENT
+   ========================================================= */
+.ev-mobile-appointment-cta {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .ev-mobile-appointment-cta {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    z-index: 1600;
+    display: block;
+  }
+
+  .ev-mobile-appointment-cta a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    background: linear-gradient(180deg, #1d8fff 0%, #0071e3 100%);
+    box-shadow:
+      0 14px 34px rgba(0, 113, 227, 0.26),
+      inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .ev-mobile-appointment-cta a:active {
+    transform: translateY(1px);
+  }
+
+  /* 避免被底部按钮挡住页面内容 */
+  body {
+    padding-bottom: 88px;
+  }
+}
+
+/* dark mode */
+@media (max-width: 768px) and (prefers-color-scheme: dark) {
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-mobile-appointment-cta a,
+  html[data-theme="auto"] .ev-mobile-appointment-cta a {
+    background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
+    box-shadow:
+      0 14px 34px rgba(37, 99, 235, 0.28),
+      inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  }
+}
+
+@media (max-width: 768px) {
+  html.dark .ev-mobile-appointment-cta a,
+  body.dark .ev-mobile-appointment-cta a,
+  html[data-theme="dark"] .ev-mobile-appointment-cta a,
+  body[data-theme="dark"] .ev-mobile-appointment-cta a,
+  html[data-color-scheme="dark"] .ev-mobile-appointment-cta a,
+  body[data-color-scheme="dark"] .ev-mobile-appointment-cta a {
+    background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
+    box-shadow:
+      0 14px 34px rgba(37, 99, 235, 0.28),
+      inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  }
+}
+
+/* Appointment hero title */
+.ev-appointment-hero-title {
+  max-width: none !important;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .ev-appointment-hero-title {
+    white-space: normal;
+  }
+}
+
+/* =========================================================
+   APPOINTMENT / CONTACT CLEAN FINAL
+   ========================================================= */
+
+/* page spacing */
+.ev-appointment-page,
+.ev-contact-page {
+  padding-top: 0 !important;
+}
+
+.ev-appointment-page .ev-editorial-section:first-child,
+.ev-contact-page .ev-editorial-section:first-child {
+  padding-top: 10px !important;
+  padding-bottom: 12px !important;
+  margin-top: 0 !important;
+}
+
+.ev-appointment-page .ev-contact-layout,
+.ev-contact-page .ev-contact-layout {
+  margin-top: 0 !important;
+  padding-top: 8px !important;
+}
+
+/* hide big auto post spacing influence */
+.ev-appointment-page .post > .meta,
+.ev-contact-page .post > .meta {
+  margin-bottom: 0 !important;
+}
+
+/* appointment hero title: single line on desktop */
+.ev-appointment-hero-title {
+  max-width: none !important;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .ev-appointment-hero-title {
+    white-space: normal;
+  }
+}
+
+/* left card appointment title smaller */
+.ev-appointment-side-title {
+  font-size: 26px !important;
+  line-height: 1.06 !important;
+  letter-spacing: -0.035em;
+  margin: 0 0 10px !important;
+}
+
+/* remove exaggerated height */
+.ev-appointment-form-card {
+  min-height: auto !important;
+}
+
+/* only slightly taller notes */
+.ev-appointment-form-card textarea,
+#contact-form textarea {
+  min-height: 132px !important;
+  height: auto !important;
+}
+
+/* hours card */
+.ev-hours-card {
+  gap: 12px;
+}
+
+.ev-hours-status {
+  display: inline-flex;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ev-hours-status.open {
+  background: rgba(16, 185, 129, 0.14);
+  color: #16a34a;
+}
+
+.ev-hours-status.closed {
+  background: rgba(239, 68, 68, 0.14);
+  color: #dc2626;
+}
+
+.ev-hours-week {
+  display: grid;
+  gap: 8px;
+}
+
+.ev-hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.ev-hours-day {
+  font-weight: 600;
+  color: #1d1d1f;
+}
+
+.ev-hours-time {
+  color: #4b5563;
+  text-align: right;
+}
+
+.ev-hours-row.is-today {
+  background: #eef5ff;
+  outline: 1px solid rgba(0, 113, 227, 0.12);
+}
+
+.ev-hours-row.is-today .ev-hours-day {
+  color: #005ecb;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-hours-row,
+  html[data-theme="auto"] .ev-hours-row {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-hours-day,
+  html[data-theme="auto"] .ev-hours-day {
+    color: #f3f4f6;
+  }
+
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-hours-time,
+  html[data-theme="auto"] .ev-hours-time {
+    color: #cbd5e1;
+  }
+
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-hours-row.is-today,
+  html[data-theme="auto"] .ev-hours-row.is-today {
+    background: rgba(30, 64, 175, 0.22);
+    outline: 1px solid rgba(96, 165, 250, 0.18);
+  }
+
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-hours-row.is-today .ev-hours-day,
+  html[data-theme="auto"] .ev-hours-row.is-today .ev-hours-day {
+    color: #bfdbfe;
+  }
+
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-hours-status.open,
+  html[data-theme="auto"] .ev-hours-status.open {
+    color: #34d399;
+  }
+
+  html:not(.dark):not([data-theme="light"]):not([data-theme="dark"]) .ev-hours-status.closed,
+  html[data-theme="auto"] .ev-hours-status.closed {
+    color: #f87171;
+  }
+}
+
+html.dark .ev-hours-row,
+body.dark .ev-hours-row,
+html[data-theme="dark"] .ev-hours-row,
+html[data-color-scheme="dark"] .ev-hours-row {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+html.dark .ev-hours-day,
+body.dark .ev-hours-day,
+html[data-theme="dark"] .ev-hours-day,
+html[data-color-scheme="dark"] .ev-hours-day {
+  color: #f3f4f6;
+}
+
+html.dark .ev-hours-time,
+body.dark .ev-hours-time,
+html[data-theme="dark"] .ev-hours-time,
+html[data-color-scheme="dark"] .ev-hours-time {
+  color: #cbd5e1;
+}
+
+html.dark .ev-hours-row.is-today,
+body.dark .ev-hours-row.is-today,
+html[data-theme="dark"] .ev-hours-row.is-today,
+html[data-color-scheme="dark"] .ev-hours-row.is-today {
+  background: rgba(30, 64, 175, 0.22);
+  outline: 1px solid rgba(96, 165, 250, 0.18);
+}
+
+html.dark .ev-hours-row.is-today .ev-hours-day,
+body.dark .ev-hours-row.is-today .ev-hours-day,
+html[data-theme="dark"] .ev-hours-row.is-today .ev-hours-day,
+html[data-color-scheme="dark"] .ev-hours-row.is-today .ev-hours-day {
+  color: #bfdbfe;
+}
+
+html.dark .ev-hours-status.open,
+body.dark .ev-hours-status.open,
+html[data-theme="dark"] .ev-hours-status.open,
+html[data-color-scheme="dark"] .ev-hours-status.open {
+  color: #34d399;
+}
+
+html.dark .ev-hours-status.closed,
+body.dark .ev-hours-status.closed,
+html[data-theme="dark"] .ev-hours-status.closed,
+html[data-color-scheme="dark"] .ev-hours-status.closed {
+  color: #f87171;
+}
+
+/* =========================================================
+   ABOUT PAGE TWEAKS
+   ========================================================= */
+.ev-about-page .ev-about-hero {
+  padding-top: 42px;
+  padding-bottom: 34px;
+}
+
+.ev-about-page .ev-about-hero-title {
+  max-width: none !important;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+}
+
+.ev-about-page .ev-about-hero-lead {
+  max-width: 34em;
+}
+
+.ev-about-page .ev-editorial-section {
+  padding-top: 42px;
+  padding-bottom: 42px;
+}
+
+.ev-about-page .ev-split-band {
+  padding-top: 52px;
+  padding-bottom: 52px;
+}
+
+.ev-about-page .ev-cta-panel {
+  margin-top: 12px;
+  padding: 42px 24px;
+}
+
+@media (min-width: 901px) {
+  .ev-about-page .ev-about-hero-title {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 900px) {
+  .ev-about-page .ev-about-hero {
+    padding-top: 28px;
+    padding-bottom: 24px;
+  }
+
+  .ev-about-page .ev-editorial-section,
+  .ev-about-page .ev-split-band {
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+}
+
+/* =========================================================
+   ABOUT PAGE — TIGHTER LAYOUT
+   ========================================================= */
+
+/* 1) 顶部空白收紧一点 */
+.ev-about-page .ev-about-hero {
+  padding-top: 18px !important;
+  padding-bottom: 24px !important;
+  margin-top: -8px;
+}
+
+/* 2) 首页主标题稍微小一点，更稳重 */
+.ev-about-page .ev-about-hero-title {
+  max-width: none !important;
+  font-size: clamp(2.4rem, 4.2vw, 4.4rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.045em;
+}
+
+/* 3) 副标题宽度更紧凑一点 */
+.ev-about-page .ev-about-hero-lead {
+  max-width: 28em !important;
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem) !important;
+  line-height: 1.65 !important;
+}
+
+/* 4) About 页各 section 整体留白减少 */
+.ev-about-page .ev-editorial-section {
+  padding-top: 34px !important;
+  padding-bottom: 34px !important;
+}
+
+.ev-about-page .ev-split-band {
+  padding-top: 42px !important;
+  padding-bottom: 42px !important;
+}
+
+.ev-about-page .ev-cta-panel {
+  margin-top: 8px !important;
+  padding: 34px 24px !important;
+}
+
+/* 5) 最关键：正文区大标题不要被限制得太窄 */
+.ev-about-page .ev-section-content h2,
+.ev-about-page .ev-split-copy h2,
+.ev-about-page .ev-cta-panel h2 {
+  max-width: 16ch !important;
+  font-size: clamp(2rem, 3.6vw, 3.15rem) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.045em;
+}
+
+/* 如果你想“Because no two eyes...” 更少换行，可再放宽 */
+.ev-about-page .ev-editorial-section:nth-of-type(3) .ev-section-content h2 {
+  max-width: 20ch !important;
+}
+
+/* 6) 第一张图片不要全幅那么宽 */
+.ev-about-page .ev-full-bleed {
+  width: min(1120px, calc(100vw - 56px)) !important;
+  margin: 8px auto 44px !important;
+}
+
+.ev-about-page .ev-full-bleed img {
+  height: 340px !important;
+  border-radius: 24px !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* 7) 列表更紧凑一点 */
+.ev-about-page .ev-feature-list {
+  margin-top: 1.1em !important;
+}
+
+.ev-about-page .ev-feature-list li {
+  margin-bottom: 0.45em !important;
+  line-height: 1.65 !important;
+}
+
+/* 8) 手机端再收一点 */
+@media (max-width: 900px) {
+  .ev-about-page .ev-about-hero {
+    padding-top: 10px !important;
+    padding-bottom: 18px !important;
+    margin-top: 0;
+  }
+
+  .ev-about-page .ev-editorial-section,
+  .ev-about-page .ev-split-band {
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+  }
+
+  .ev-about-page .ev-full-bleed {
+    width: calc(100vw - 24px) !important;
+    margin: 6px auto 28px !important;
+  }
+
+  .ev-about-page .ev-full-bleed img {
+    height: 260px !important;
+  }
+
+  .ev-about-page .ev-section-content h2,
+  .ev-about-page .ev-split-copy h2,
+  .ev-about-page .ev-cta-panel h2 {
+    max-width: 100% !important;
+  }
+}
